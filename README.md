@@ -19,3 +19,8 @@ DNS should point `tappointer.com` to GitHub Pages, and `CNAME` must contain only
 ```txt
 tappointer.com
 ```
+
+## Store links
+
+- App Store: `https://apps.apple.com/us/app/tap-pointer/id6773116360`
+- Google Play: `https://play.google.com/store/apps/details?id=com.tappointer.app`

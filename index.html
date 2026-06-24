@@ -3,58 +3,264 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tap Pointer | Show Taps in Demo Videos</title>
-  <meta name="description" content="Tap Pointer is an iPhone app for adding tap effects, area highlights, and voiceover to recorded demo videos.">
+  <title>Tap Pointer | Demo Video Tap Effects Editor</title>
+  <meta name="description" content="Tap Pointer is a demo video editor for adding visible tap effects, touch indicators, UI highlights, and voiceover to app screen recordings.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://tappointer.com/">
+  <link rel="icon" type="image/png" href="assets/brand/app-icon.png">
+  <link rel="apple-touch-icon" href="assets/brand/app-icon.png">
+  <link rel="preload" as="image" href="assets/screenshots/tap-pointer-demo-video.jpg" fetchpriority="high">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Tap Pointer">
-  <meta property="og:description" content="Show taps in demo videos with clear visual effects.">
+  <meta property="og:title" content="Tap Pointer | Demo Video Tap Effects Editor">
+  <meta property="og:description" content="Add tap effects, touch markers, highlights, and voiceover to app demo videos and screen recordings.">
   <meta property="og:url" content="https://tappointer.com/">
   <meta property="og:site_name" content="Tap Pointer">
+  <meta property="og:image" content="https://tappointer.com/assets/og/tap-pointer-og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Tap Pointer demo video editor preview">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tap Pointer | Demo Video Tap Effects Editor">
+  <meta name="twitter:description" content="Add tap effects, touch markers, highlights, and voiceover to app demo videos and screen recordings.">
+  <meta name="twitter:image" content="https://tappointer.com/assets/og/tap-pointer-og.jpg">
   <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://tappointer.com/#organization",
+        "name": "Ichitap",
+        "url": "https://tappointer.com/",
+        "logo": "https://tappointer.com/assets/brand/app-icon.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "support@tappointer.com",
+          "contactType": "customer support",
+          "availableLanguage": ["en", "ja"]
+        }
+      },
+      {
+        "@type": ["SoftwareApplication", "MobileApplication"],
+        "@id": "https://tappointer.com/#app",
+        "name": "Tap Pointer",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": ["iOS", "Android"],
+        "url": "https://tappointer.com/",
+        "image": "https://tappointer.com/assets/og/tap-pointer-og.jpg",
+        "description": "Tap Pointer is a demo video editor for adding visible tap effects, touch indicators, UI highlights, and voiceover to app screen recordings.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "downloadUrl": [
+          "https://apps.apple.com/us/app/tap-pointer/id6773116360",
+          "https://play.google.com/store/apps/details?id=com.tappointer.app"
+        ],
+        "sameAs": [
+          "https://apps.apple.com/us/app/tap-pointer/id6773116360",
+          "https://play.google.com/store/apps/details?id=com.tappointer.app"
+        ],
+        "featureList": [
+          "Visible tap effects for demo videos",
+          "Touch indicators for screen recordings",
+          "Rectangular UI area highlights",
+          "Optional voiceover recording",
+          "High-quality MP4 export"
+        ],
+        "publisher": {
+          "@id": "https://tappointer.com/#organization"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://tappointer.com/#website",
+        "url": "https://tappointer.com/",
+        "name": "Tap Pointer",
+        "inLanguage": "en",
+        "publisher": {
+          "@id": "https://tappointer.com/#organization"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-  <header class="site nav">
-    <a class="brand" href="/">
-      <span class="mark" aria-hidden="true"></span>
-      <span>Tap Pointer</span>
-    </a>
-    <nav class="links" aria-label="Main navigation">
-      <a href="privacy-policy.html">Privacy</a>
-      <a href="terms-of-use.html">Terms</a>
-      <a href="support.html">Support</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="/">
+        <img src="assets/brand/app-icon.png" width="36" height="36" alt="" aria-hidden="true">
+        <span>Tap Pointer</span>
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="support.html">Support</a>
+      </div>
     </nav>
   </header>
 
-  <main class="site">
-    <section class="hero">
-      <p class="eyebrow">Show Taps in Demo Videos</p>
-      <h1>Tap Pointer</h1>
-      <p class="lead">Add clear tap effects, area highlights, and optional voiceover to already-recorded iPhone demo videos.</p>
-      <div class="actions">
-        <a class="button primary" href="support.html">Support</a>
-        <a class="button" href="privacy-policy.html">Privacy Policy</a>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero-image" src="assets/screenshots/tap-pointer-demo-video.jpg" width="900" height="1947" alt="Tap Pointer adding colorful tap markers to a demo video">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Tap effects for app demo videos</p>
+        <h1 id="hero-title">Tap Pointer</h1>
+        <p class="hero-lead">A clean demo video editor for adding visible tap effects, touch indicators, UI highlights, and voiceover to screen recordings.</p>
+        <div class="store-actions" aria-label="Download Tap Pointer">
+          <a class="button primary" href="https://apps.apple.com/us/app/tap-pointer/id6773116360">Download on the App Store</a>
+          <a class="button" href="https://play.google.com/store/apps/details?id=com.tappointer.app">Get it on Google Play</a>
+        </div>
+        <dl class="hero-facts" aria-label="Product highlights">
+          <div>
+            <dt>Made for</dt>
+            <dd>screen recordings</dd>
+          </div>
+          <div>
+            <dt>Add</dt>
+            <dd>tap markers</dd>
+          </div>
+          <div>
+            <dt>Export</dt>
+            <dd>clear MP4 videos</dd>
+          </div>
+        </dl>
       </div>
     </section>
 
-    <section class="grid" aria-label="Features">
-      <article class="card">
-        <h2>Tap Effects</h2>
-        <p>Mark exact tap positions so viewers can follow app tutorials, demos, bug reports, and support videos.</p>
-      </article>
-      <article class="card">
-        <h2>Area Highlights</h2>
-        <p>Draw attention to important regions with colored rectangular highlights and adjustable display timing.</p>
-      </article>
-      <article class="card">
-        <h2>Local Editing</h2>
-        <p>Import videos you choose, edit locally, preview the result, and export an MP4 when you are ready.</p>
-      </article>
+    <section class="intro-band">
+      <div class="site intro-grid">
+        <p class="section-kicker">Why it exists</p>
+        <div>
+          <h2>Make every tap visible after recording.</h2>
+          <p>Tap Pointer works with videos you already recorded. Import an app walkthrough, bug report, product demo, training clip, or support video, then add a visual presentation layer your viewers can follow.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="site section">
+      <div class="section-heading">
+        <p class="section-kicker">Core features</p>
+        <h2>Built for app demos, tutorials, and QA videos.</h2>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h3>Tap effects and touch markers</h3>
+          <p>Place clear tap points exactly where the viewer should look, with bright visual effects that stand out on dark or light app screens.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Area highlights</h3>
+          <p>Highlight buttons, forms, charts, and UI regions with timed rectangles so important parts of a screen recording are not missed.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Voiceover and source audio</h3>
+          <p>Keep the original sound or record narration after editing, then preview the result before exporting a polished video file.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Local editing workflow</h3>
+          <p>Tap Pointer edits videos selected from your device. It does not draw over other apps, record in the background, or capture touches from other apps.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="workflow" class="workflow-band">
+      <div class="site section workflow">
+        <div class="section-heading compact">
+          <p class="section-kicker">Workflow</p>
+          <h2>Record first. Annotate after.</h2>
+        </div>
+        <ol class="steps">
+          <li>
+            <span>01</span>
+            <h3>Import a screen recording</h3>
+            <p>Choose a video from Photos or Files on iPhone, or import an Android demo video on Google Play.</p>
+          </li>
+          <li>
+            <span>02</span>
+            <h3>Add tap and highlight events</h3>
+            <p>Use the timeline to place tap effects, touch indicators, and UI highlights at the moments that matter.</p>
+          </li>
+          <li>
+            <span>03</span>
+            <h3>Preview and export</h3>
+            <p>Review timing, add optional voiceover, then export a high-quality MP4 for customers, teammates, or support tickets.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="screenshots" class="site section">
+      <div class="section-heading">
+        <p class="section-kicker">Screenshots</p>
+        <h2>A focused editor, not another screen recorder.</h2>
+      </div>
+      <div class="screenshot-grid">
+        <figure class="screenshot-card feature-shot">
+          <img src="assets/screenshots/tap-pointer-editor.jpg" width="760" height="1644" loading="lazy" alt="Tap Pointer editor with tap markers on a dashboard demo video">
+          <figcaption>Tap markers and highlights stay editable on the timeline.</figcaption>
+        </figure>
+        <figure class="screenshot-card">
+          <img src="assets/screenshots/tap-pointer-timeline.jpg" width="760" height="1644" loading="lazy" alt="Tap Pointer timeline and event adjustment controls">
+          <figcaption>Fine-tune timing, color, and position after recording.</figcaption>
+        </figure>
+        <figure class="screenshot-card">
+          <img src="assets/screenshots/tap-pointer-import.jpg" width="760" height="1644" loading="lazy" alt="Tap Pointer import screen for Photos and Files">
+          <figcaption>Import videos from Photos or Files, then add the presentation layer.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="seo-band">
+      <div class="site seo-copy">
+        <h2>For product teams, indie developers, QA, and support.</h2>
+        <p>Use Tap Pointer when a plain screen recording is not enough. It helps turn app demo videos, walkthroughs, onboarding clips, QA bug reports, training videos, and customer support recordings into clear visual explanations with tap effects, touch indicators, UI highlights, and voiceover.</p>
+      </div>
+    </section>
+
+    <section class="site section faq-section">
+      <div class="section-heading compact">
+        <p class="section-kicker">FAQ</p>
+        <h2>Common questions</h2>
+      </div>
+      <div class="faq-list">
+        <article>
+          <h3>Does Tap Pointer record the screen?</h3>
+          <p>No. Record your app demo first using your device's screen recording tool, then import the video into Tap Pointer.</p>
+        </article>
+        <article>
+          <h3>Can it show real touches from other apps?</h3>
+          <p>No. Tap Pointer does not capture touches from other apps. You manually add tap points and highlights after recording.</p>
+        </article>
+        <article>
+          <h3>Is editing free?</h3>
+          <p>Editing and preview are free. High-quality MP4 export is available with a one-time Export Unlock purchase.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="download-band">
+      <div class="site download-content">
+        <h2>Make your next screen recording easier to follow.</h2>
+        <div class="store-actions">
+          <a class="button primary" href="https://apps.apple.com/us/app/tap-pointer/id6773116360">Download on the App Store</a>
+          <a class="button" href="https://play.google.com/store/apps/details?id=com.tappointer.app">Get it on Google Play</a>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="site footer">
     <p>&copy; 2026 Ichitap. All rights reserved.</p>
+    <nav aria-label="Footer navigation">
+      <a href="privacy-policy.html">Privacy</a>
+      <a href="terms-of-use.html">Terms</a>
+      <a href="support.html">Support</a>
+    </nav>
   </footer>
 </body>
 </html>
