@@ -250,3 +250,14 @@ footer a:hover { color: var(--ink); }
   .reveal { opacity: 1; transform: none; transition: none; }
   html { scroll-behavior: auto; }
 }
+
+/* Language menu */
+.langs { position: relative; }
+.langs summary { list-style: none; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; color: var(--ink); font-size: 14px; white-space: nowrap; }
+.langs summary::-webkit-details-marker { display: none; }
+.langs summary svg { width: 16px; height: 16px; }
+.langs-menu { position: absolute; right: 0; top: calc(100% + 8px); min-width: 190px; padding: 6px; border-radius: 14px; border: 1px solid var(--line); background: #0b0f14; box-shadow: 0 18px 40px rgba(0, 0, 0, .5); z-index: 30; }
+.top nav .langs-menu a { display: block !important; padding: 8px 12px; border-radius: 9px; color: var(--ink); font-size: 14px; }
+.top nav .langs-menu a:hover { background: rgba(255, 255, 255, .08); }
+.top nav .langs-menu a[aria-current="page"] { color: var(--cyan); font-weight: 700; }
+@media (max-width: 640px) { .langs summary span { display: none; } }

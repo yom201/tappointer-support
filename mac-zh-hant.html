@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tap Pointer for Mac｜為螢幕錄影加上指標、點擊與拖移效果</title>
+  <meta name="description" content="Tap Pointer for Mac 會顯示指標聚光圈、點擊效果與拖移軌跡，並將含效果的示範錄成 MP4。">
+  <link rel="canonical" href="https://tappointer.com/mac-zh-hant.html">
+  <link rel="alternate" hreflang="en" href="https://tappointer.com/mac.html">
+  <link rel="alternate" hreflang="ja" href="https://tappointer.com/mac-ja.html">
+  <link rel="alternate" hreflang="ko" href="https://tappointer.com/mac-ko.html">
+  <link rel="alternate" hreflang="zh-Hant" href="https://tappointer.com/mac-zh-hant.html">
+  <link rel="alternate" hreflang="de" href="https://tappointer.com/mac-de.html">
+  <link rel="alternate" hreflang="pt-BR" href="https://tappointer.com/mac-pt-br.html">
+  <link rel="alternate" hreflang="es" href="https://tappointer.com/mac-es.html">
+  <link rel="alternate" hreflang="x-default" href="https://tappointer.com/mac.html">
+  <link rel="icon" type="image/png" href="assets/brand/mac-app-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tap Pointer for Mac">
+  <meta property="og:description" content="讓每個動作都清楚可見。為 Mac 示範加上指標聚光圈、點擊效果與拖移軌跡。">
+  <meta property="og:url" content="https://tappointer.com/mac-zh-hant.html">
+  <meta property="og:image" content="https://tappointer.com/assets/screenshots/mac-pointer-en.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="mac-lp.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="assets/brand/mac-app-icon.png" alt="" width="32" height="32"><span>Tap Pointer <small>for Mac</small></span></a>
+      <nav aria-label="頁面">
+        <a href="#effects">效果</a>
+        <a href="#try">體驗</a>
+        <a href="#record">錄影</a>
+        <a href="#start">開始使用</a>
+        <details class="langs"><summary aria-label="語言"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span>繁體中文</span></summary><div class="langs-menu"><a href="mac.html" lang="en" hreflang="en">English</a><a href="mac-ja.html" lang="ja" hreflang="ja">日本語</a><a href="mac-ko.html" lang="ko" hreflang="ko">한국어</a><a href="mac-zh-hant.html" lang="zh-Hant" hreflang="zh-Hant" aria-current="page">繁體中文</a><a href="mac-de.html" lang="de" hreflang="de">Deutsch</a><a href="mac-pt-br.html" lang="pt-BR" hreflang="pt-BR">Português (Brasil)</a><a href="mac-es.html" lang="es" hreflang="es">Español</a></div></details>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <h1 class="h-hero">讓每個<span class="grad">動作</span>都清楚可見。</h1>
+          <p class="lead">讓指標、點擊與拖移一目了然。</p>
+          <div class="chips">
+            <span class="chip" style="--c: var(--cyan)"><i></i>指標聚光圈</span>
+            <span class="chip" style="--c: var(--green)"><i></i>點擊效果</span>
+            <span class="chip" style="--c: var(--pink)"><i></i>拖移軌跡</span>
+          </div>
+          <div class="hero-cta">
+            <a class="btn primary" href="https://license.tappointer.com/download/mac">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>
+              下載 Mac 版
+            </a>
+            <a class="btn ghost" href="#try">在這裡體驗</a>
+          </div>
+          <p class="note req">macOS 15 或以上 · 支援 Apple 晶片與 Intel</p>
+        </div>
+
+        <div class="mac">
+          <div class="mac-screen" id="hero-stage">
+            <div class="menubar"><b>Finder</b><span>File</span><span>Edit</span><span>View</span><span class="tray"><span class="tp-icon" title="Tap Pointer"></span><span>9:41</span></span></div>
+            <div class="app" aria-hidden="true">
+              <div class="side"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="main">
+                <div class="kpis"><div></div><div></div><div></div><div></div></div>
+                <div class="chart">
+                  <svg viewBox="0 0 400 140" preserveAspectRatio="none">
+                    <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#0a84ff"/><stop offset="1" stop-color="#5cf06a"/></linearGradient></defs>
+                    <path d="M10 118 L45 110 L80 96 L115 100 L150 84 L185 88 L220 66 L255 58 L290 62 L325 40 L360 30 L390 18" fill="none" stroke="url(#g1)" stroke-width="3" vector-effect="non-scaling-stroke"/>
+                  </svg>
+                </div>
+                <div class="bars"><span style="height:30%"></span><span style="height:42%"></span><span style="height:38%"></span><span style="height:55%"></span><span style="height:50%"></span><span style="height:66%"></span><span style="height:62%"></span><span style="height:78%"></span><span style="height:74%"></span><span style="height:90%"></span><span style="height:100%"></span></div>
+              </div>
+            </div>
+            <canvas class="fx" data-demo="hero" data-interactive data-opts='{"follow":true,"followSize":56,"ref":900}' aria-label="指標、點擊與拖移效果的動畫示範"></canvas>
+            <span class="stage-hint">在這裡按一下、按右鍵或拖移</span>
+          </div>
+          <div class="mac-base"></div>
+          <span class="mac-caption">示意畫面</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Three effects -->
+    <section id="effects">
+      <div class="wrap">
+        <div class="center reveal">
+          <span class="kicker">在所有 App 中都能使用</span>
+          <h2 class="h-sec"><span class="grad">三種方式</span>引導視線。</h2>
+        </div>
+        <div class="tiles">
+          <article class="tile reveal">
+            <div class="canvas-box"><canvas class="fx" data-demo="spotlight" data-opts='{"follow":true,"followSize":120,"followOpacity":0.3,"trail":false,"ref":420}'></canvas></div>
+            <div class="cap"><h3>指標聚光圈</h3><p>即使沒有按一下，柔和的圓圈也會跟著指標移動。</p></div>
+          </article>
+          <article class="tile reveal">
+            <div class="canvas-box"><canvas class="fx" data-demo="clicks" data-opts='{"size":180,"trail":false,"ref":420}'></canvas></div>
+            <div class="cap"><h3>點擊效果</h3><p>每次按一下左鍵或右鍵都會即時顯示。</p></div>
+          </article>
+          <article class="tile reveal">
+            <div class="canvas-box"><canvas class="fx" data-demo="trail" data-opts='{"size":140,"trailWidth":9,"duration":1.6,"color":"#ff453a","ref":420}'></canvas></div>
+            <div class="cap"><h3>拖移軌跡</h3><p>拖移時畫出路徑線，並從最舊的部分開始淡出。</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Click styles -->
+    <section>
+      <div class="wrap">
+        <div class="center reveal">
+          <span class="kicker">左鍵與右鍵可分別設定</span>
+          <h2 class="h-sec"><span class="grad">為每個按鍵</span>選擇點擊樣式。</h2>
+        </div>
+        <div class="styles">
+          <article class="style-card reveal">
+            <div class="canvas-box"><span class="lr"><span>L</span><span>R</span></span><canvas class="fx" data-demo="style-ripple" data-script="style" data-opts='{"size":200,"trail":false,"left":"ripple","right":"ripple","color":"#0a84ff","ref":380}'></canvas></div>
+            <div class="cap">波紋＋半透明圓</div>
+          </article>
+          <article class="style-card reveal">
+            <div class="canvas-box"><span class="lr"><span>L</span><span>R</span></span><canvas class="fx" data-demo="style-circle" data-script="style" data-opts='{"size":200,"trail":false,"left":"circle","right":"circle","color":"#0a84ff","ref":380}'></canvas></div>
+            <div class="cap">半透明圓</div>
+          </article>
+          <article class="style-card reveal">
+            <div class="canvas-box"><span class="lr"><span>L</span><span>R</span></span><canvas class="fx" data-demo="style-labeled" data-script="style" data-opts='{"size":200,"trail":false,"left":"labeledCircle","right":"labeledCircle","color":"#0a84ff","ref":380}'></canvas></div>
+            <div class="cap">標示 L/R 的圓</div>
+          </article>
+        </div>
+        <div class="legend center reveal" style="justify-content:center">
+          <span><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="13" fill="none" stroke="#0a84ff" stroke-width="3"/></svg>左鍵：實線外框</span>
+          <span><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="13" fill="none" stroke="#0a84ff" stroke-width="3" stroke-dasharray="5 4"/></svg>右鍵：虛線外框</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Playground -->
+    <section id="try">
+      <div class="wrap">
+        <div class="center reveal">
+          <span class="kicker">即時體驗</span>
+          <h2 class="h-sec">依你的喜好設定。<span class="grad">在這裡試試看。</span></h2>
+          <p class="lead">調整設定後，在畫面上按一下、按右鍵或拖移試試看。</p>
+        </div>
+        <div class="play">
+          <div class="mac reveal">
+            <div class="mac-screen">
+              <div class="menubar"><b>Safari</b><span>File</span><span>Edit</span><span class="tray"><span class="tp-icon"></span><span>9:41</span></span></div>
+              <div class="app" aria-hidden="true">
+                <div class="side"><span></span><span></span><span></span><span></span></div>
+                <div class="main">
+                  <div class="kpis"><div></div><div></div><div></div><div></div></div>
+                  <div class="chart"></div>
+                  <div class="bars"><span style="height:40%"></span><span style="height:70%"></span><span style="height:55%"></span><span style="height:90%"></span><span style="height:65%"></span><span style="height:100%"></span></div>
+                </div>
+              </div>
+              <canvas class="fx" data-demo="play" data-interactive data-opts='{"ref":900}' aria-label="體驗畫面"></canvas>
+            </div>
+            <div class="mac-base"></div>
+          </div>
+
+          <form class="panel reveal" onsubmit="return false">
+            <div class="ctl">
+              <span class="lbl">顏色</span>
+              <div class="swatches" data-ctl="color" role="group" aria-label="顏色">
+                <button type="button" data-v="green" style="--c:#30d158" aria-pressed="true" aria-label="綠色"></button>
+                <button type="button" data-v="blue" style="--c:#0a84ff" aria-pressed="false" aria-label="藍色"></button>
+                <button type="button" data-v="red" style="--c:#ff453a" aria-pressed="false" aria-label="紅色"></button>
+                <button type="button" data-v="yellow" style="--c:#ffd60a" aria-pressed="false" aria-label="黃色"></button>
+              </div>
+            </div>
+            <div class="ctl"><span class="lbl">按一下左鍵</span>
+              <div class="seg" data-ctl="left"><button type="button" data-v="ripple" aria-pressed="true">波紋</button><button type="button" data-v="circle" aria-pressed="false">圓</button><button type="button" data-v="labeledCircle" aria-pressed="false">L/R</button></div>
+            </div>
+            <div class="ctl"><span class="lbl">按右鍵</span>
+              <div class="seg" data-ctl="right"><button type="button" data-v="ripple" aria-pressed="true">波紋</button><button type="button" data-v="circle" aria-pressed="false">圓</button><button type="button" data-v="labeledCircle" aria-pressed="false">L/R</button></div>
+            </div>
+            <div class="ctl"><label for="c-size">大小 <output for="c-size" data-fmt="{v} pt"></output></label><input id="c-size" type="range" min="50" max="220" value="110" data-ctl="size"></div>
+            <div class="ctl"><label for="c-dur">顯示時間 <output for="c-dur" data-fmt="{v} 秒"></output></label><input id="c-dur" type="range" min="0.3" max="4" step="0.1" value="1.2" data-ctl="duration"></div>
+            <label class="toggle">指標聚光圈 <input type="checkbox" data-ctl="follow" checked></label>
+            <div class="sub" data-sub="follow">
+              <div class="ctl"><label for="c-fs">聚光圈大小 <output for="c-fs" data-fmt="{v} pt"></output></label><input id="c-fs" type="range" min="24" max="160" value="64" data-ctl="followSize"></div>
+              <div class="ctl"><label for="c-fo">聚光圈不透明度 <output for="c-fo" data-fmt="{v} %"></output></label><input id="c-fo" type="range" min="8" max="60" value="22" data-ctl="followOpacity"></div>
+            </div>
+            <label class="toggle">拖移軌跡 <input type="checkbox" data-ctl="trail" checked></label>
+            <div class="sub" data-sub="trail">
+              <div class="ctl"><label for="c-tw">軌跡粗細 <output for="c-tw" data-fmt="{v} pt"></output></label><input id="c-tw" type="range" min="1" max="20" value="6" data-ctl="trailWidth"></div>
+              <label class="toggle">保留軌跡到下次按一下 <input type="checkbox" data-ctl="keepTrail"></label>
+            </div>
+            <p class="note">範圍與 Mac App 的設定相同。本頁為模擬畫面。</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recording -->
+    <section id="record">
+      <div class="wrap">
+        <div class="reveal">
+          <span class="kicker">內建錄影</span>
+          <h2 class="h-sec"><span class="grad">更出色的示範，</span><br>就在你的 Mac 上。</h2>
+        </div>
+        <div class="rec-grid">
+          <div class="feats reveal">
+            <div class="feat"><svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linecap="round" aria-hidden="true"><rect x="5" y="9" width="42" height="28" rx="3"/><path d="M19 45h14M26 37v8"/></svg><div><h3>選擇錄影對象</h3><p>全螢幕 · 單一視窗 · 指定範圍</p></div></div>
+            <div class="feat"><svg viewBox="0 0 52 52" fill="none" stroke="#ff3fa0" stroke-width="3" stroke-linecap="round" aria-hidden="true"><rect x="19" y="5" width="14" height="26" rx="7"/><path d="M12 25a14 14 0 0 0 28 0M26 39v8"/></svg><div><h3>收錄人聲與聲音</h3><p>麥克風＋系統音訊</p></div></div>
+            <div class="feat"><svg viewBox="0 0 52 52" fill="none" stroke="#5cf06a" stroke-width="3" aria-hidden="true"><rect x="4" y="12" width="44" height="28" rx="5"/><text x="26" y="32" text-anchor="middle" font-size="15" font-weight="800" fill="#5cf06a" stroke="none" font-family="-apple-system, sans-serif">HD</text></svg><div><h3>設定錄影品質</h3><p>Full HD · 4K · 30/60 fps</p></div></div>
+            <div class="feat"><svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><circle cx="26" cy="26" r="21"/><path d="M21 17l13 9-13 9z"/></svg><div><h3>輕鬆開始與停止</h3><p>倒數計時＋鍵盤快速鍵</p></div></div>
+          </div>
+          <div class="rec-stage reveal">
+            <div class="mac">
+              <div class="mac-screen" id="rec">
+                <div class="menubar"><b>Finder</b><span class="tray"><span class="tp-icon"></span><span>9:41</span></span></div>
+                <div class="desk-win w1"></div>
+                <div class="desk-win w2"></div>
+                <div class="cap-frame"></div>
+                <span class="cap-label" data-full="全螢幕" data-window="單一視窗" data-region="指定範圍"></span>
+                <div class="count"></div>
+                <div class="rec-pill"><i></i>REC <span>00:00</span></div>
+                <div class="meter" aria-hidden="true">
+                  <div><svg viewBox="0 0 24 24" fill="none" stroke="#ff3fa0" stroke-width="2.4" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><span class="lv" style="--c:#ff3fa0"><b></b><b></b><b></b><b></b><b></b></span></div>
+                  <div><svg viewBox="0 0 24 24" fill="none" stroke="#19e3ff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/></svg><span class="lv" style="--c:#19e3ff"><b></b><b></b><b></b><b></b><b></b></span></div>
+                </div>
+                <div class="keys"></div>
+                <div class="mp4"><div class="file"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg><b>MP4</b></div></div>
+              </div>
+              <div class="mac-base"></div>
+              <span class="mac-caption">示意畫面</span>
+            </div>
+            <div class="center"><span class="save-pill">連同指標效果存成 MP4。</span></div>
+          </div>
+        </div>
+        <p class="note" style="margin-top:22px">錄影品質取決於來源解析度。</p>
+      </div>
+    </section>
+
+    <!-- Store images -->
+    <section>
+      <div class="wrap">
+        <div class="shots">
+          <img class="reveal" src="assets/screenshots/mac-pointer-en.jpg" width="1440" height="900" loading="lazy" alt="Tap Pointer for Mac：指標聚光圈、點擊效果與拖移軌跡。">
+          <img class="reveal" src="assets/screenshots/mac-recording-en.jpg" width="1440" height="900" loading="lazy" alt="Tap Pointer for Mac：在 Mac 上錄製更出色的示範。">
+        </div>
+      </div>
+    </section>
+
+    <!-- Plan and start -->
+    <section id="start">
+      <div class="wrap">
+        <div class="center reveal">
+          <span class="kicker">Mac 版不另收費</span>
+          <h2 class="h-sec">包含在 <span class="grad">Tap Pointer 月費方案</span>中。</h2>
+          <p class="lead">在 iPhone 或 Android 的 Tap Pointer 中訂閱，再用代碼啟用你的 Mac。</p>
+        </div>
+        <div class="steps">
+          <div class="step reveal"><span class="num">1</span><div class="phone"><span>Get Mac Activation Code</span></div><h3>在手機上開啟「Monthly Plan」</h3></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="step reveal"><span class="num">2</span><div class="code">ABCD-EFGH-JKLM</div><h3>取得 Mac 啟用代碼</h3></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="step reveal"><span class="num">3</span><div class="mini-mac">啟用代碼<i></i><b>啟用這台 Mac</b></div><h3>在 Mac 的 Tap Pointer 設定中輸入</h3></div>
+        </div>
+        <div class="plan-cta">
+          <a class="btn primary" href="https://license.tappointer.com/download/mac">下載 Mac 版</a>
+          <a class="btn ghost" href="https://apps.apple.com/us/app/tap-pointer/id6773116360">App Store</a>
+          <a class="btn ghost" href="https://play.google.com/store/apps/details?id=com.tappointer.app">Google Play</a>
+        </div>
+        <p class="plan-note">先前的買斷購買仍可繼續使用手機版的付費功能。若要使用 Mac 版，請在手機的 Tap Pointer 中訂閱。<br>詳細設定步驟：<a href="mac-download.html#english">下載 Mac 版</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>&copy; 2026 Ichitap. All rights reserved.</span>
+      <nav aria-label="頁尾">
+        <a href="/">iPhone 與 Android 版 Tap Pointer</a>
+        <a href="mac-support.html">Mac 支援</a>
+        <a href="mac-privacy-policy.html">隱私權政策</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="mac-lp.js" defer></script>
+</body>
+</html>
