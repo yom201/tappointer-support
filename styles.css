@@ -696,3 +696,159 @@ h1 {
     font-size: 42px;
   }
 }
+
+/* Tap Pointer for Mac promotion */
+.nav-links a.nav-mac {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border: 1px solid rgba(53, 217, 255, 0.55);
+  border-radius: 999px;
+  color: var(--ink);
+  font-weight: 700;
+}
+.nav-links a.nav-mac span {
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--cyan), var(--green));
+  color: #031014;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.mac-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 100%;
+  margin-bottom: 18px;
+  padding: 7px 14px 7px 7px;
+  border: 1px solid rgba(53, 217, 255, 0.5);
+  border-radius: 999px;
+  background: rgba(3, 4, 5, 0.6);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 0 24px rgba(53, 217, 255, 0.2);
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+.mac-chip:hover { border-color: var(--cyan); transform: translateY(-1px); }
+.mac-chip-tag {
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--cyan), var(--green));
+  color: #031014;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.mac-band {
+  padding: 96px 0;
+  border-top: 1px solid var(--line-soft);
+  background:
+    radial-gradient(circle at 78% 40%, rgba(53, 217, 255, 0.14), transparent 46%),
+    radial-gradient(circle at 92% 80%, rgba(255, 77, 140, 0.1), transparent 40%);
+}
+.mac-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 48px;
+  align-items: center;
+}
+.mac-copy h2 {
+  margin: 0 0 16px;
+  font-size: clamp(36px, 4.6vw, 60px);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+}
+.mac-grad {
+  background: linear-gradient(90deg, var(--cyan), var(--green));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.mac-copy > p:not(.section-kicker):not(.mac-note) {
+  color: rgba(247, 249, 251, 0.82);
+  font-size: 18px;
+  line-height: 1.55;
+}
+.mac-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 22px 0 26px;
+  padding: 0;
+  list-style: none;
+}
+.mac-points li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 13px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  font-size: 14px;
+  font-weight: 600;
+}
+.mac-points i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--c);
+  box-shadow: 0 0 10px var(--c);
+}
+.mac-note {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.mac-shot {
+  position: relative;
+  display: block;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1.5px rgba(53, 217, 255, 0.8), 0 0 36px rgba(53, 217, 255, 0.3), 0 0 70px rgba(255, 77, 140, 0.16);
+  transition: transform 220ms ease;
+}
+.mac-shot:hover { transform: translateY(-3px); }
+.mac-shot img { display: block; width: 100%; height: auto; }
+.mac-ripple {
+  position: absolute;
+  left: 75.6%;
+  top: 41.6%;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+.mac-ripple::before,
+.mac-ripple::after {
+  content: "";
+  position: absolute;
+  left: -60px;
+  top: -60px;
+  width: 120px;
+  height: 120px;
+  border: 3px solid var(--green);
+  border-radius: 50%;
+  opacity: 0;
+  animation: mac-ripple 2.4s ease-out infinite;
+}
+.mac-ripple::after { animation-delay: 1.2s; }
+@keyframes mac-ripple {
+  0% { transform: scale(0.2); opacity: 0.9; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+@media (max-width: 980px) {
+  .mac-grid { grid-template-columns: 1fr; }
+  .mac-band { padding: 72px 0; }
+}
+@media (max-width: 720px) {
+  .mac-chip { font-size: 12.5px; }
+  .nav-links a.nav-mac { padding: 4px 10px; }
+  .nav-links a:nth-child(4) { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mac-ripple::before, .mac-ripple::after { animation: none; }
+}
