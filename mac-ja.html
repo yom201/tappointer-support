@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tap Pointer for Mac | ポインター・クリック・ドラッグを見える演出に</title>
+  <meta name="description" content="Tap Pointer for Macは、ポインターの常時追従・クリック演出・ドラッグ軌跡を表示し、演出ごとMP4で録画できます。">
+  <link rel="canonical" href="https://tappointer.com/mac-ja.html">
+  <link rel="alternate" hreflang="en" href="https://tappointer.com/mac.html">
+  <link rel="alternate" hreflang="ja" href="https://tappointer.com/mac-ja.html">
+  <link rel="icon" type="image/png" href="assets/brand/mac-app-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tap Pointer for Mac">
+  <meta property="og:description" content="その操作を、鮮やかに。わかりやすく。ポインター・クリック・ドラッグを見える演出に。">
+  <meta property="og:url" content="https://tappointer.com/mac-ja.html">
+  <meta property="og:image" content="https://tappointer.com/assets/screenshots/mac-pointer-ja.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="mac-lp.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="assets/brand/mac-app-icon.png" alt="" width="32" height="32"><span>Tap Pointer <small>for Mac</small></span></a>
+      <nav aria-label="ページ内">
+        <a href="#effects">演出</a>
+        <a href="#try">試す</a>
+        <a href="#record">録画</a>
+        <a href="#start">始め方</a>
+        <a class="lang" href="mac.html" lang="en" hreflang="en">English</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <h1 class="h-hero">その操作を、<br><span class="grad">鮮やかに。</span><br>わかりやすく。</h1>
+          <p class="lead">ポインター・クリック・ドラッグを見える演出に。</p>
+          <div class="chips">
+            <span class="chip" style="--c: var(--cyan)"><i></i>常時追従</span>
+            <span class="chip" style="--c: var(--green)"><i></i>クリック演出</span>
+            <span class="chip" style="--c: var(--pink)"><i></i>ドラッグ軌跡</span>
+          </div>
+          <div class="hero-cta">
+            <a class="btn primary" href="downloads/Tap-Pointer-for-Mac.zip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>
+              Mac版をダウンロード
+            </a>
+            <a class="btn ghost" href="#try">ここで試す</a>
+          </div>
+          <p class="note req">macOS 15以降 · AppleシリコンとIntelのMacに対応</p>
+        </div>
+
+        <div class="mac">
+          <div class="mac-screen" id="hero-stage">
+            <div class="menubar"><b>Finder</b><span>ファイル</span><span>編集</span><span>表示</span><span class="tray"><span class="tp-icon" title="Tap Pointer"></span><span>9:41</span></span></div>
+            <div class="app" aria-hidden="true">
+              <div class="side"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="main">
+                <div class="kpis"><div></div><div></div><div></div><div></div></div>
+                <div class="chart">
+                  <svg viewBox="0 0 400 140" preserveAspectRatio="none">
+                    <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#0a84ff"/><stop offset="1" stop-color="#5cf06a"/></linearGradient></defs>
+                    <path d="M10 118 L45 110 L80 96 L115 100 L150 84 L185 88 L220 66 L255 58 L290 62 L325 40 L360 30 L390 18" fill="none" stroke="url(#g1)" stroke-width="3" vector-effect="non-scaling-stroke"/>
+                  </svg>
+                </div>
+                <div class="bars"><span style="height:30%"></span><span style="height:42%"></span><span style="height:38%"></span><span style="height:55%"></span><span style="height:50%"></span><span style="height:66%"></span><span style="height:62%"></span><span style="height:78%"></span><span style="height:74%"></span><span style="height:90%"></span><span style="height:100%"></span></div>
+              </div>
+            </div>
+            <canvas class="fx" data-demo="hero" data-interactive data-opts='{"follow":true,"followSize":56,"ref":900}' aria-label="ポインター・クリック・ドラッグの演出の動く見本"></canvas>
+            <span class="stage-hint">ここをクリック・右クリック・ドラッグ</span>
+          </div>
+          <div class="mac-base"></div>
+          <span class="mac-caption">演出イメージ</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Three effects -->
+    <section id="effects">
+      <div class="wrap">
+        <div class="center reveal">
+          <span class="kicker">どのアプリの上でも</span>
+          <h2 class="h-sec">視線を導く、<span class="grad">3つの演出。</span></h2>
+        </div>
+        <div class="tiles">
+          <article class="tile reveal">
+            <div class="canvas-box"><canvas class="fx" data-demo="spotlight" data-opts='{"follow":true,"followSize":120,"followOpacity":0.3,"trail":false,"ref":420}'></canvas></div>
+            <div class="cap"><h3>常時追従</h3><p>クリックしていない間も、半透明の円がポインターについていきます。</p></div>
+          </article>
+          <article class="tile reveal">
+            <div class="canvas-box"><canvas class="fx" data-demo="clicks" data-opts='{"size":180,"trail":false,"ref":420}'></canvas></div>
+            <div class="cap"><h3>クリック演出</h3><p>左クリックも右クリックも、その場で見えます。</p></div>
+          </article>
+          <article class="tile reveal">
+            <div class="canvas-box"><canvas class="fx" data-demo="trail" data-opts='{"size":140,"trailWidth":9,"duration":1.6,"color":"#ff453a","ref":420}'></canvas></div>
+            <div class="cap"><h3>ドラッグ軌跡</h3><p>ドラッグした道筋を線で描き、古い部分から消えていきます。</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Click styles -->
+    <section>
+      <div class="wrap">
+        <div class="center reveal">
+          <span class="kicker">左右それぞれに設定</span>
+          <h2 class="h-sec">クリックの演出は、<span class="grad">左右で選べる。</span></h2>
+        </div>
+        <div class="styles">
+          <article class="style-card reveal">
+            <div class="canvas-box"><span class="lr"><span>左</span><span>右</span></span><canvas class="fx" data-demo="style-ripple" data-script="style" data-opts='{"size":200,"trail":false,"left":"ripple","right":"ripple","color":"#0a84ff","ref":380}'></canvas></div>
+            <div class="cap">波紋＋半透明の中心円</div>
+          </article>
+          <article class="style-card reveal">
+            <div class="canvas-box"><span class="lr"><span>左</span><span>右</span></span><canvas class="fx" data-demo="style-circle" data-script="style" data-opts='{"size":200,"trail":false,"left":"circle","right":"circle","color":"#0a84ff","ref":380}'></canvas></div>
+            <div class="cap">半透明の円のみ</div>
+          </article>
+          <article class="style-card reveal">
+            <div class="canvas-box"><span class="lr"><span>左</span><span>右</span></span><canvas class="fx" data-demo="style-labeled" data-script="style" data-opts='{"size":200,"trail":false,"left":"labeledCircle","right":"labeledCircle","color":"#0a84ff","ref":380}'></canvas></div>
+            <div class="cap">L／R付きの円</div>
+          </article>
+        </div>
+        <div class="legend center reveal" style="justify-content:center">
+          <span><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="13" fill="none" stroke="#0a84ff" stroke-width="3"/></svg>左クリック：実線の輪郭</span>
+          <span><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="13" fill="none" stroke="#0a84ff" stroke-width="3" stroke-dasharray="5 4"/></svg>右クリック：破線の輪郭</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Playground -->
+    <section id="try">
+      <div class="wrap">
+        <div class="center reveal">
+          <span class="kicker">その場で試せる</span>
+          <h2 class="h-sec">自分好みに。<span class="grad">ここで試せます。</span></h2>
+          <p class="lead">設定を変えてから、画面の上でクリック・右クリック・ドラッグしてください。</p>
+        </div>
+        <div class="play">
+          <div class="mac reveal">
+            <div class="mac-screen">
+              <div class="menubar"><b>Safari</b><span>ファイル</span><span>編集</span><span class="tray"><span class="tp-icon"></span><span>9:41</span></span></div>
+              <div class="app" aria-hidden="true">
+                <div class="side"><span></span><span></span><span></span><span></span></div>
+                <div class="main">
+                  <div class="kpis"><div></div><div></div><div></div><div></div></div>
+                  <div class="chart"></div>
+                  <div class="bars"><span style="height:40%"></span><span style="height:70%"></span><span style="height:55%"></span><span style="height:90%"></span><span style="height:65%"></span><span style="height:100%"></span></div>
+                </div>
+              </div>
+              <canvas class="fx" data-demo="play" data-interactive data-opts='{"ref":900}' aria-label="試せる画面"></canvas>
+            </div>
+            <div class="mac-base"></div>
+          </div>
+
+          <form class="panel reveal" onsubmit="return false">
+            <div class="ctl">
+              <span class="lbl">色</span>
+              <div class="swatches" data-ctl="color" role="group" aria-label="色">
+                <button type="button" data-v="green" style="--c:#30d158" aria-pressed="true" aria-label="緑"></button>
+                <button type="button" data-v="blue" style="--c:#0a84ff" aria-pressed="false" aria-label="青"></button>
+                <button type="button" data-v="red" style="--c:#ff453a" aria-pressed="false" aria-label="赤"></button>
+                <button type="button" data-v="yellow" style="--c:#ffd60a" aria-pressed="false" aria-label="黄"></button>
+              </div>
+            </div>
+            <div class="ctl"><span class="lbl">左クリック</span>
+              <div class="seg" data-ctl="left"><button type="button" data-v="ripple" aria-pressed="true">波紋</button><button type="button" data-v="circle" aria-pressed="false">円のみ</button><button type="button" data-v="labeledCircle" aria-pressed="false">L／R</button></div>
+            </div>
+            <div class="ctl"><span class="lbl">右クリック</span>
+              <div class="seg" data-ctl="right"><button type="button" data-v="ripple" aria-pressed="true">波紋</button><button type="button" data-v="circle" aria-pressed="false">円のみ</button><button type="button" data-v="labeledCircle" aria-pressed="false">L／R</button></div>
+            </div>
+            <div class="ctl"><label for="c-size">大きさ <output for="c-size" data-fmt="{v} pt"></output></label><input id="c-size" type="range" min="50" max="220" value="110" data-ctl="size"></div>
+            <div class="ctl"><label for="c-dur">表示時間 <output for="c-dur" data-fmt="{v} 秒"></output></label><input id="c-dur" type="range" min="0.3" max="4" step="0.1" value="1.2" data-ctl="duration"></div>
+            <label class="toggle">常時追従の円 <input type="checkbox" data-ctl="follow" checked></label>
+            <div class="sub" data-sub="follow">
+              <div class="ctl"><label for="c-fs">円の大きさ <output for="c-fs" data-fmt="{v} pt"></output></label><input id="c-fs" type="range" min="24" max="160" value="64" data-ctl="followSize"></div>
+              <div class="ctl"><label for="c-fo">円の濃さ <output for="c-fo" data-fmt="{v} %"></output></label><input id="c-fo" type="range" min="8" max="60" value="22" data-ctl="followOpacity"></div>
+            </div>
+            <label class="toggle">ドラッグ軌跡 <input type="checkbox" data-ctl="trail" checked></label>
+            <div class="sub" data-sub="trail">
+              <div class="ctl"><label for="c-tw">軌跡の太さ <output for="c-tw" data-fmt="{v} pt"></output></label><input id="c-tw" type="range" min="1" max="20" value="6" data-ctl="trailWidth"></div>
+              <label class="toggle">次のクリックまで軌跡を残す <input type="checkbox" data-ctl="keepTrail"></label>
+            </div>
+            <p class="note">範囲はMac版の設定と同じです。このページの表示は見本です。</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recording -->
+    <section id="record">
+      <div class="wrap">
+        <div class="reveal">
+          <span class="kicker">録画もこのアプリで</span>
+          <h2 class="h-sec"><span class="grad">魅せるデモを、</span><br>このMacで。</h2>
+        </div>
+        <div class="rec-grid">
+          <div class="feats reveal">
+            <div class="feat"><svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linecap="round" aria-hidden="true"><rect x="5" y="9" width="42" height="28" rx="3"/><path d="M19 45h14M26 37v8"/></svg><div><h3>録画する場所を選べる</h3><p>画面全体・アプリ・選択範囲</p></div></div>
+            <div class="feat"><svg viewBox="0 0 52 52" fill="none" stroke="#ff3fa0" stroke-width="3" stroke-linecap="round" aria-hidden="true"><rect x="19" y="5" width="14" height="26" rx="7"/><path d="M12 25a14 14 0 0 0 28 0M26 39v8"/></svg><div><h3>声も、デモの音も</h3><p>マイク＋システム音声</p></div></div>
+            <div class="feat"><svg viewBox="0 0 52 52" fill="none" stroke="#5cf06a" stroke-width="3" aria-hidden="true"><rect x="4" y="12" width="44" height="28" rx="5"/><text x="26" y="32" text-anchor="middle" font-size="15" font-weight="800" fill="#5cf06a" stroke="none" font-family="-apple-system, sans-serif">HD</text></svg><div><h3>画質も、なめらかさも</h3><p>フルHD・4K・30/60fps</p></div></div>
+            <div class="feat"><svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><circle cx="26" cy="26" r="21"/><path d="M21 17l13 9-13 9z"/></svg><div><h3>開始も停止もスムーズに</h3><p>カウントダウン・ショートカット</p></div></div>
+          </div>
+          <div class="rec-stage reveal">
+            <div class="mac">
+              <div class="mac-screen" id="rec">
+                <div class="menubar"><b>Finder</b><span class="tray"><span class="tp-icon"></span><span>9:41</span></span></div>
+                <div class="desk-win w1"></div>
+                <div class="desk-win w2"></div>
+                <div class="cap-frame"></div>
+                <span class="cap-label" data-full="画面全体" data-window="アプリ" data-region="選択範囲"></span>
+                <div class="count"></div>
+                <div class="rec-pill"><i></i>REC <span>00:00</span></div>
+                <div class="meter" aria-hidden="true">
+                  <div><svg viewBox="0 0 24 24" fill="none" stroke="#ff3fa0" stroke-width="2.4" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><span class="lv" style="--c:#ff3fa0"><b></b><b></b><b></b><b></b><b></b></span></div>
+                  <div><svg viewBox="0 0 24 24" fill="none" stroke="#19e3ff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/></svg><span class="lv" style="--c:#19e3ff"><b></b><b></b><b></b><b></b><b></b></span></div>
+                </div>
+                <div class="keys"></div>
+                <div class="mp4"><div class="file"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg><b>MP4</b></div></div>
+              </div>
+              <div class="mac-base"></div>
+              <span class="mac-caption">演出イメージ</span>
+            </div>
+            <div class="center"><span class="save-pill">ポインター演出と一緒に、MP4で保存。</span></div>
+          </div>
+        </div>
+        <p class="note" style="margin-top:22px">画質は収録元の解像度に依存します。</p>
+      </div>
+    </section>
+
+    <!-- Store images -->
+    <section>
+      <div class="wrap">
+        <div class="shots">
+          <img class="reveal" src="assets/screenshots/mac-pointer-ja.jpg" width="1440" height="900" loading="lazy" alt="Tap Pointer for Mac：その操作を、鮮やかに。わかりやすく。常時追従・クリック演出・ドラッグ軌跡。">
+          <img class="reveal" src="assets/screenshots/mac-recording-ja.jpg" width="1440" height="900" loading="lazy" alt="Tap Pointer for Mac：魅せるデモを、このMacで。">
+        </div>
+      </div>
+    </section>
+
+    <!-- Plan and start -->
+    <section id="start">
+      <div class="wrap">
+        <div class="center reveal">
+          <span class="kicker">Mac版に追加料金なし</span>
+          <h2 class="h-sec">Tap Pointerの<br><span class="grad">月額プランで使えます。</span></h2>
+          <p class="lead">iPhoneかAndroidのTap Pointerで月額プランを購読し、認証コードでMacを認証します。</p>
+        </div>
+        <div class="steps">
+          <div class="step reveal"><span class="num">1</span><div class="phone"><span>Macの認証コードを取得</span></div><h3>スマートフォンで「月額プラン」を開く</h3></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="step reveal"><span class="num">2</span><div class="code">ABCD-EFGH-JKLM</div><h3>Macの認証コードを取得</h3></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="step reveal"><span class="num">3</span><div class="mini-mac">認証コード<i></i><b>このMacを認証</b></div><h3>Macの「Tap Pointerの設定」に入力</h3></div>
+        </div>
+        <div class="plan-cta">
+          <a class="btn primary" href="downloads/Tap-Pointer-for-Mac.zip">Mac版をダウンロード</a>
+          <a class="btn ghost" href="https://apps.apple.com/us/app/tap-pointer/id6773116360">App Store</a>
+          <a class="btn ghost" href="https://play.google.com/store/apps/details?id=com.tappointer.app">Google Play</a>
+        </div>
+        <p class="plan-note">買い切りで利用できるスマートフォン版の機能は、そのまま使えます。Mac版を使う場合は、スマートフォンのTap Pointerから月額プランに登録してください。<br>詳しい手順：<a href="mac-download.html">Mac版のダウンロード</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>&copy; 2026 Ichitap. All rights reserved.</span>
+      <nav aria-label="フッター">
+        <a href="/">iPhone・Android版 Tap Pointer</a>
+        <a href="mac-support.html">Mac版のサポート</a>
+        <a href="mac-privacy-policy.html">プライバシーポリシー</a>
+        <a href="mac.html" lang="en" hreflang="en">English</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="mac-lp.js" defer></script>
+</body>
+</html>
