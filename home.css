@@ -23,6 +23,8 @@ canvas.fx {
   height: 100%;
   touch-action: none;
 }
+/* The hero phone only needs taps, so let a finger on it still scroll the page. */
+#hero-fx, .hero-phone .phone-screen { touch-action: pan-y pinch-zoom; }
 
 /* 1. Hero */
 .home-hero {
