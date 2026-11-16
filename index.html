@@ -9,7 +9,7 @@
   <link rel="canonical" href="https://tappointer.com/">
   <link rel="icon" type="image/png" href="assets/brand/app-icon.png">
   <link rel="apple-touch-icon" href="assets/brand/app-icon.png">
-  <link rel="preload" as="image" href="assets/screenshots/tap-pointer-demo-video.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/screenshots/tap-pointer-store-dashboard.jpg" fetchpriority="high">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Tap Pointer | Demo Video Tap Effects Editor">
   <meta property="og:description" content="Add tap effects, touch markers, highlights, and voiceover to app demo videos and screen recordings.">
@@ -24,6 +24,7 @@
   <meta name="twitter:description" content="Add tap effects, touch markers, highlights, and voiceover to app demo videos and screen recordings.">
   <meta name="twitter:image" content="https://tappointer.com/assets/og/tap-pointer-og.jpg">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="home.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -106,33 +107,42 @@
   </header>
 
   <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <img class="hero-image" src="assets/screenshots/tap-pointer-demo-video.jpg" width="900" height="1947" alt="Tap Pointer adding colorful tap markers to a demo video">
-      <div class="hero-overlay" aria-hidden="true"></div>
-      <div class="hero-content">
-        <a class="mac-chip" href="mac.html"><span class="mac-chip-tag">New</span> Tap Pointer for Mac — live click effects while you record <span aria-hidden="true">→</span></a>
-        <p class="eyebrow">Tap effects for app demo videos</p>
-        <h1 id="hero-title">Tap Pointer</h1>
-        <p class="hero-lead">A clean demo video editor for adding visible tap effects, touch indicators, UI highlights, and voiceover to screen recordings.</p>
-        <div class="store-actions" aria-label="Download Tap Pointer">
-          <a class="button primary" href="https://apps.apple.com/us/app/tap-pointer/id6773116360">Download on the App Store</a>
-          <a class="button" href="https://play.google.com/store/apps/details?id=com.tappointer.app">Get it on Google Play</a>
-          <a class="button" href="mac.html">Download for Mac</a>
+    <section class="hero home-hero" aria-labelledby="hero-title">
+      <div class="home-hero-grid">
+        <div class="hero-copy">
+          <a class="mac-chip" href="mac.html"><span class="mac-chip-tag">New</span> Tap Pointer for Mac — live click effects while you record <span aria-hidden="true">→</span></a>
+          <p class="eyebrow">Tap effects for app demo videos</p>
+          <h1 id="hero-title">Tap <span class="grad">Pointer</span></h1>
+          <p class="hero-lead">A clean demo video editor for adding visible tap effects, touch indicators, UI highlights, and voiceover to screen recordings.</p>
+          <div class="store-actions" aria-label="Download Tap Pointer">
+            <a class="button primary" href="https://apps.apple.com/us/app/tap-pointer/id6773116360">Download on the App Store</a>
+            <a class="button" href="https://play.google.com/store/apps/details?id=com.tappointer.app">Get it on Google Play</a>
+            <a class="button" href="mac.html">Download for Mac</a>
+          </div>
+          <dl class="hero-facts" aria-label="Product highlights">
+            <div>
+              <dt>Made for</dt>
+              <dd>screen recordings</dd>
+            </div>
+            <div>
+              <dt>Add</dt>
+              <dd>tap markers</dd>
+            </div>
+            <div>
+              <dt>Export</dt>
+              <dd>clear MP4 videos</dd>
+            </div>
+          </dl>
         </div>
-        <dl class="hero-facts" aria-label="Product highlights">
-          <div>
-            <dt>Made for</dt>
-            <dd>screen recordings</dd>
+        <div class="hero-phone">
+          <div class="phone-frame">
+            <div class="phone-screen">
+              <img src="assets/screenshots/tap-pointer-store-dashboard.jpg" width="900" height="1947" alt="Tap Pointer editor showing tap markers on a dashboard demo video">
+              <canvas id="hero-fx" class="fx" aria-hidden="true"></canvas>
+            </div>
           </div>
-          <div>
-            <dt>Add</dt>
-            <dd>tap markers</dd>
-          </div>
-          <div>
-            <dt>Export</dt>
-            <dd>clear MP4 videos</dd>
-          </div>
-        </dl>
+          <p class="phone-hint" aria-hidden="true">Tap the screen</p>
+        </div>
       </div>
     </section>
 
@@ -162,34 +172,99 @@
     </section>
 
     <section class="intro-band">
-      <div class="site intro-grid">
+      <div class="site intro-grid reveal">
         <p class="section-kicker">Why it exists</p>
         <div>
-          <h2>Make every tap visible after recording.</h2>
+          <h2>Make every tap <span class="grad">visible</span> after recording.</h2>
           <p>Tap Pointer works with videos you already recorded. Import an app walkthrough, bug report, product demo, training clip, or support video, then add a visual presentation layer your viewers can follow.</p>
         </div>
       </div>
     </section>
 
-    <section id="features" class="site section">
-      <div class="section-heading">
-        <p class="section-kicker">Core features</p>
-        <h2>Built for app demos, tutorials, and QA videos.</h2>
+    <section id="try" class="try-band">
+      <div class="site section">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Try it</p>
+          <div>
+            <h2>Mark a tap. <span class="grad">Press play.</span></h2>
+            <p class="section-lead">A simplified version of the editor. Tap the video to add an event, pick a tool and a color, then play it back.</p>
+          </div>
+        </div>
+        <div id="try-editor" class="try-editor reveal">
+          <div class="try-stage">
+            <div class="try-video" tabindex="0" role="button" aria-label="Demo video. Tap or press Enter to add an event.">
+              <div class="mock-app" aria-hidden="true">
+                <div class="mock-bar"><i></i><b>Checkout</b><i></i></div>
+                <div class="mock-hero"></div>
+                <div class="mock-row"><i></i><div><b></b><b></b></div></div>
+                <div class="mock-row"><i></i><div><b></b><b></b></div></div>
+                <div class="mock-cta">Pay now</div>
+                <div class="mock-tabs"><i></i><i></i><i></i><i></i></div>
+              </div>
+              <canvas id="try-fx" class="fx" aria-hidden="true"></canvas>
+              <p class="try-hint">Tap anywhere on the video</p>
+            </div>
+            <div class="timeline">
+              <div class="tl-top"><span>Timeline</span><output class="tl-count">0 events</output></div>
+              <div class="tl-row">
+                <button type="button" class="tl-play" data-act="play" aria-pressed="false">Play</button>
+                <div class="tl-track" aria-hidden="true"><i class="tl-head"></i></div>
+              </div>
+              <output class="tl-time">00:00.0 / 00:10.0</output>
+            </div>
+          </div>
+          <div class="try-panel">
+            <div class="ctl">
+              <p class="lbl">Tool</p>
+              <div class="seg" role="group" aria-label="Tool">
+                <button type="button" data-tool="tap" aria-pressed="true">Tap</button>
+                <button type="button" data-tool="area" aria-pressed="false">Area</button>
+                <button type="button" data-tool="swipe" aria-pressed="false">Swipe</button>
+              </div>
+              <p class="ctl-help">Area and Swipe: drag on the video to set the size or direction.</p>
+            </div>
+            <div class="ctl">
+              <p class="lbl">Color</p>
+              <div class="swatches" role="group" aria-label="Color">
+                <button type="button" data-color="green" aria-pressed="true" style="--c: #30d158"><span>Green</span></button>
+                <button type="button" data-color="blue" aria-pressed="false" style="--c: #0a84ff"><span>Blue</span></button>
+                <button type="button" data-color="red" aria-pressed="false" style="--c: #ff453a"><span>Red</span></button>
+              </div>
+            </div>
+            <div class="try-actions">
+              <button type="button" class="button" data-act="undo">Undo</button>
+              <button type="button" class="button" data-act="clear">Clear</button>
+            </div>
+            <p class="try-note" aria-live="polite">Tap the video to add an event.</p>
+            <p class="try-more">The app also includes Long Press, Drag, Text, Arrow, Callout, Blur and Mosaic.</p>
+          </div>
+        </div>
       </div>
-      <div class="feature-grid">
+    </section>
+
+    <section id="features" class="site section">
+      <div class="section-heading reveal">
+        <p class="section-kicker">Core features</p>
+        <h2>Built for app demos, tutorials, and <span class="grad">QA videos.</span></h2>
+      </div>
+      <div class="feature-grid reveal">
         <article class="feature-card">
+          <i class="feature-dot" style="--c: #30d158" aria-hidden="true"></i>
           <h3>Tap effects and touch markers</h3>
           <p>Place clear tap points exactly where the viewer should look, with bright visual effects that stand out on dark or light app screens.</p>
         </article>
         <article class="feature-card">
+          <i class="feature-dot square" style="--c: #0a84ff" aria-hidden="true"></i>
           <h3>Area highlights</h3>
           <p>Highlight buttons, forms, charts, and UI regions with timed rectangles so important parts of a screen recording are not missed.</p>
         </article>
         <article class="feature-card">
+          <i class="feature-dot" style="--c: #ff453a" aria-hidden="true"></i>
           <h3>Voiceover and source audio</h3>
           <p>Keep the original sound or record narration after editing, then preview the result before exporting a polished video file.</p>
         </article>
         <article class="feature-card">
+          <i class="feature-dot" style="--c: #19e3ff" aria-hidden="true"></i>
           <h3>Local editing workflow</h3>
           <p>Tap Pointer edits videos selected from your device. It does not draw over other apps, record in the background, or capture touches from other apps.</p>
         </article>
@@ -198,23 +273,41 @@
 
     <section id="workflow" class="workflow-band">
       <div class="site section workflow">
-        <div class="section-heading compact">
+        <div class="section-heading compact reveal">
           <p class="section-kicker">Workflow</p>
-          <h2>Record first. Annotate after.</h2>
+          <h2>Record first. <span class="grad">Annotate after.</span></h2>
         </div>
-        <ol class="steps">
+        <ol class="steps animated">
           <li>
             <span>01</span>
+            <div class="wf-vis wf-import" aria-hidden="true">
+              <div class="wf-phone"><i class="wf-clip"><b></b></i></div>
+              <em>Photos · Files</em>
+            </div>
             <h3>Import a screen recording</h3>
             <p>Choose a video from Photos or Files on iPhone, or import an Android demo video on Google Play.</p>
           </li>
           <li>
             <span>02</span>
+            <div class="wf-vis wf-mark" aria-hidden="true">
+              <div class="wf-track">
+                <i style="--c: #30d158; --x: 14%; --d: .2s">T</i>
+                <i style="--c: #0a84ff; --x: 38%; --d: .55s">A</i>
+                <i style="--c: #ff453a; --x: 62%; --d: .9s">S</i>
+                <i style="--c: #30d158; --x: 84%; --d: 1.25s">T</i>
+                <b class="wf-head"></b>
+              </div>
+            </div>
             <h3>Add tap and highlight events</h3>
             <p>Use the timeline to place tap effects, touch indicators, and UI highlights at the moments that matter.</p>
           </li>
           <li>
             <span>03</span>
+            <div class="wf-vis wf-export" aria-hidden="true">
+              <div class="wf-bar"><i></i></div>
+              <div class="wf-status"><em>Exporting MP4</em><strong class="wf-pct">0%</strong></div>
+              <b class="wf-done">MP4 ready</b>
+            </div>
             <h3>Preview and export</h3>
             <p>Review timing, add optional voiceover, then export a high-quality MP4 for customers, teammates, or support tickets.</p>
           </li>
@@ -223,22 +316,22 @@
     </section>
 
     <section id="screenshots" class="site section">
-      <div class="section-heading">
+      <div class="section-heading reveal">
         <p class="section-kicker">Screenshots</p>
-        <h2>A focused editor, not another screen recorder.</h2>
+        <h2>A focused editor, <span class="grad">not another screen recorder.</span></h2>
       </div>
-      <div class="screenshot-grid">
+      <div class="screenshot-grid reveal">
         <figure class="screenshot-card feature-shot">
-          <img src="assets/screenshots/tap-pointer-editor.jpg" width="760" height="1644" loading="lazy" alt="Tap Pointer editor with tap markers on a dashboard demo video">
-          <figcaption>Tap markers and highlights stay editable on the timeline.</figcaption>
+          <img src="assets/screenshots/tap-pointer-store-dashboard.jpg" width="900" height="1947" loading="lazy" alt="Tap Pointer editor with tap markers on a dashboard demo video">
+          <figcaption>Tap markers play right on top of your demo video.</figcaption>
         </figure>
         <figure class="screenshot-card">
-          <img src="assets/screenshots/tap-pointer-timeline.jpg" width="760" height="1644" loading="lazy" alt="Tap Pointer timeline and event adjustment controls">
-          <figcaption>Fine-tune timing, color, and position after recording.</figcaption>
-        </figure>
-        <figure class="screenshot-card">
-          <img src="assets/screenshots/tap-pointer-import.jpg" width="760" height="1644" loading="lazy" alt="Tap Pointer import screen for Photos and Files">
+          <img src="assets/screenshots/tap-pointer-store-import.jpg" width="900" height="1947" loading="lazy" alt="Tap Pointer import screen with Import from Photos and Import from Files">
           <figcaption>Import videos from Photos or Files, then add the presentation layer.</figcaption>
+        </figure>
+        <figure class="screenshot-card">
+          <img src="assets/screenshots/tap-pointer-store-editor.jpg" width="900" height="1947" loading="lazy" alt="Tap Pointer timeline with five events, time adjustment and tool list">
+          <figcaption>Fine-tune timing on the timeline and choose from many tools.</figcaption>
         </figure>
       </div>
     </section>
@@ -255,7 +348,7 @@
         <p class="section-kicker">FAQ</p>
         <h2>Common questions</h2>
       </div>
-      <div class="faq-list">
+      <div class="faq-list reveal">
         <article>
           <h3>Does Tap Pointer record the screen?</h3>
           <p>No. Record your app demo first using your device's screen recording tool, then import the video into Tap Pointer.</p>
@@ -266,7 +359,7 @@
         </article>
         <article>
           <h3>Is editing free?</h3>
-          <p>Editing and preview are free. High-quality MP4 export is available with a one-time Export Unlock purchase.</p>
+          <p>Editing and preview are free, and your first 3 exports are free. For unlimited high-quality MP4 exports, subscribe to the Monthly Plan (new subscribers get a 3-day free trial). If you bought the earlier one-time Export Unlock, it keeps working.</p>
         </article>
       </div>
     </section>
@@ -291,5 +384,6 @@
       <a href="support.html">Support</a>
     </nav>
   </footer>
+  <script src="home.js" defer></script>
 </body>
 </html>
