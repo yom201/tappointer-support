@@ -341,6 +341,7 @@
     const press = async ks => { ks.forEach(k => k.classList.add('hit')); await wait(220); ks.forEach(k => k.classList.remove('hit')); };
     let visible = false;
     new IntersectionObserver(e => { visible = e[0].isIntersecting; }).observe(rec);
+    let autoStop = true;
 
     const cycle = async () => {
       on(0);
@@ -355,12 +356,26 @@
       }
       on(1);
       pill.classList.add('show'); meter.classList.add('show');
-      for (let s = 0; s <= 3; s++) { timer.textContent = `00:0${s}`; await wait(s === 3 ? 400 : 750); }
-      on(2);
-      await wait(900);
-      on(3);
-      const stop = keyRow('<span class="kbd">esc</span>');
-      await wait(400); await press(stop); await wait(120); await press(stop); await wait(300);
+      autoStop = !autoStop;
+      const leftWord = pill.dataset.left || 'left', leftFirst = pill.dataset.leftFirst === '1';
+      const total = 5;
+      const show = s => {
+        const t = `00:0${s}`;
+        if (!autoStop) { timer.textContent = t; return; }
+        const r = `00:0${total - s}`;
+        timer.textContent = `${t} · ${leftFirst ? `${leftWord} ${r}` : `${r} ${leftWord}`}`;
+      };
+      if (autoStop) {
+        on(3);
+        for (let s = 0; s <= total; s++) { show(s); await wait(s === total ? 500 : 650); }
+      } else {
+        for (let s = 0; s <= 3; s++) { show(s); await wait(s === 3 ? 400 : 750); }
+        on(2);
+        await wait(900);
+        on(3);
+        const stop = keyRow('<span class="kbd">esc</span>');
+        await wait(400); await press(stop); await wait(120); await press(stop); await wait(300);
+      }
       pill.classList.remove('show'); meter.classList.remove('show'); keys.classList.remove('show');
       frame.style.opacity = 0;
       mp4.classList.add('show'); await wait(2200);
