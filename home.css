@@ -133,10 +133,13 @@ canvas.fx {
   background: #0b0f14;
   box-shadow: var(--fx-neon);
   cursor: crosshair;
-  touch-action: none;
+  /* Tap tool: a vertical finger move scrolls the page. Area/Swipe need the drag. */
+  touch-action: pan-y pinch-zoom;
   user-select: none;
   -webkit-user-select: none;
 }
+.try-video.drag-tool, .try-video.drag-tool canvas.fx { touch-action: none; }
+#try-fx { touch-action: inherit; }
 .try-video:focus-visible { outline: 3px solid var(--fx-cyan); outline-offset: 4px; }
 .try-hint {
   position: absolute;

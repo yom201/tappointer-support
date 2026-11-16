@@ -327,11 +327,14 @@
     video.addEventListener('pointerdown', ev => {
       stop();
       downAt = relPoint(canvas, ev);
-      video.setPointerCapture(ev.pointerId);
+      downAt.touch = ev.pointerType === 'touch';
+      if (!(downAt.touch && tool === 'tap')) video.setPointerCapture(ev.pointerId);
     });
     video.addEventListener('pointerup', ev => {
       if (!downAt) return;
       const up = relPoint(canvas, ev);
+      // A finger that moved far with the Tap tool was a scroll attempt, not a tap.
+      if (downAt.touch && tool === 'tap' && Math.hypot(up.x - downAt.x, up.y - downAt.y) > 0.06) { downAt = null; return; }
       addEvent(tool, downAt, up);
       downAt = null;
     });
@@ -345,6 +348,7 @@
 
     tryRoot.querySelectorAll('[data-tool]').forEach(b => b.addEventListener('click', () => {
       tool = b.dataset.tool;
+      video.classList.toggle('drag-tool', tool !== 'tap');
       tryRoot.querySelectorAll('[data-tool]').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
     }));
     tryRoot.querySelectorAll('[data-color]').forEach(b => b.addEventListener('click', () => {
