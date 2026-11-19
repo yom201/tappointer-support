@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tap Pointer for Mac | ポインター・クリック・ドラッグを見える演出に</title>
-  <meta name="description" content="Tap Pointer for Macは、ポインターの常時追従・クリック演出・ドラッグ軌跡を表示し、演出ごとMP4で録画できます。">
+  <title>Macの画面録画を音声付きで、クリックも見える | Tap Pointer</title>
+  <meta name="description" content="Macの画面を、マイク音声やシステム音声と一緒に録画。マウスカーソル、クリック、ドラッグを強調し、演出ごとMP4に保存できます。">
+  <meta name="robots" content="max-image-preview:large">
   <link rel="canonical" href="https://tappointer.com/mac-ja.html">
   <link rel="alternate" hreflang="en" href="https://tappointer.com/mac.html">
   <link rel="alternate" hreflang="ja" href="https://tappointer.com/mac-ja.html">
@@ -16,12 +17,32 @@
   <link rel="alternate" hreflang="x-default" href="https://tappointer.com/mac.html">
   <link rel="icon" type="image/png" href="assets/brand/mac-app-icon.png">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Tap Pointer for Mac">
-  <meta property="og:description" content="その操作を、鮮やかに。わかりやすく。ポインター・クリック・ドラッグを見える演出に。">
+  <meta property="og:title" content="Macの画面録画を音声付きで、クリックも見える | Tap Pointer">
+  <meta property="og:description" content="Macの画面を、マイク音声やシステム音声と一緒に録画。マウスカーソル、クリック、ドラッグを強調し、演出ごとMP4に保存できます。">
   <meta property="og:url" content="https://tappointer.com/mac-ja.html">
   <meta property="og:image" content="https://tappointer.com/assets/screenshots/mac-pointer-ja.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="mac-lp.css">
+  <script id="software-app" type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://tappointer.com/mac.html#app",
+  "name": "Tap Pointer for Mac",
+  "url": "https://tappointer.com/mac.html",
+  "mainEntityOfPage": "https://tappointer.com/mac-ja.html",
+  "inLanguage": "ja",
+  "description": "Macの画面を、マイク音声やシステム音声と一緒に録画。マウスカーソル、クリック、ドラッグを強調し、演出ごとMP4に保存できます。",
+  "image": "https://tappointer.com/assets/screenshots/mac-pointer-ja.jpg",
+  "operatingSystem": "macOS 15 or later",
+  "applicationCategory": "MultimediaApplication",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Ichitap",
+    "url": "https://tappointer.com/"
+  }
+}
+  </script>
 </head>
 <body>
   <header class="top">
@@ -42,8 +63,8 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <h1 class="h-hero">その操作を、<br><span class="grad">鮮やかに。</span><br>わかりやすく。</h1>
-          <p class="lead">ポインター・クリック・ドラッグを見える演出に。</p>
+          <h1 class="h-hero"><span class="phrase">Macの画面を</span><br><span class="grad phrase">音声付きで録画</span></h1>
+          <p class="lead">マイクとシステム音声を録音しながら、カーソル・クリック・ドラッグを強調。演出を含めて録画に残せます。</p>
           <div class="chips">
             <span class="chip" style="--c: var(--cyan)"><i></i>常時追従</span>
             <span class="chip" style="--c: var(--green)"><i></i>クリック演出</span>
@@ -57,6 +78,7 @@
             <a class="btn ghost" href="#try">ここで試す</a>
           </div>
           <p class="note req">macOS 15以降 · AppleシリコンとIntelのMacに対応</p>
+          <a class="guide-link" href="#recording-guide">音声付きの録画手順を見る</a>
         </div>
 
         <div class="mac">
@@ -89,7 +111,7 @@
       <div class="wrap">
         <div class="center reveal">
           <span class="kicker">どのアプリの上でも</span>
-          <h2 class="h-sec">視線を導く、<span class="grad">3つの演出。</span></h2>
+          <h2 class="h-sec"><span class="phrase">カーソルと</span><span class="grad phrase">クリックを強調</span></h2>
         </div>
         <div class="tiles">
           <article class="tile reveal">
@@ -200,7 +222,7 @@
       <div class="wrap">
         <div class="reveal">
           <span class="kicker">録画もこのアプリで</span>
-          <h2 class="h-sec"><span class="grad">魅せるデモを、</span><br>このMacで。</h2>
+          <h2 class="h-sec"><span class="phrase">Macの画面と音を</span><span class="grad phrase">一緒に録画</span></h2>
         </div>
         <div class="rec-grid">
           <div class="feats reveal">
@@ -236,12 +258,37 @@
       </div>
     </section>
 
+    <section id="recording-guide" class="recording-guide">
+      <div class="wrap guide-grid">
+        <div>
+          <h2 class="h-sec"><span class="phrase">音声付きで</span><span class="phrase">録画する手順</span></h2>
+          <ol class="recording-steps">
+            <li>Tap Pointer for Macを開き、全画面・単一ウィンドウ・範囲から録画する対象を選びます。</li>
+            <li>音声の設定で、声を録るマイクを選びます。Macで再生している音も入れる場合はシステム音声をオンにします。</li>
+            <li>演出の設定で、カーソルの強調、クリック時に出す円、ドラッグの軌跡を選びます。</li>
+            <li>保存先を選んで録画を開始し、終わったら停止します。保存されたMP4を再生し、音と演出を確認します。</li>
+          </ol>
+        </div>
+        <div>
+          <h2 class="h-sec">録画のよくある質問</h2>
+          <div class="recording-answers">
+            <h3><span class="phrase">声とMacの音を</span><span class="phrase">同時に録れますか？</span></h3>
+            <p>はい。選んだマイクの音が入り、システム音声をオンにするとMacの再生音も入ります。デモを録る前に、不要な音を出すアプリを閉じておくと安心です。</p>
+            <h3><span class="phrase">画面録画に音が</span><span class="phrase">入らないときは？</span></h3>
+            <p>マイクの選択とシステム音声の設定を確認します。macOSの「プライバシーとセキュリティ」で、Tap Pointerにマイクと画面・システムオーディオ収録を許可してください。本番前に短く録画し、再生して音を確認できます。</p>
+            <h3><span class="phrase">録画せずにカーソルを</span><span class="phrase">強調できますか？</span></h3>
+            <p>はい。プレゼン中もカーソルの強調とクリック演出を使えます。Tap Pointerで録画すると、演出が保存したMP4にも入ります。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Store images -->
     <section>
       <div class="wrap">
         <div class="shots">
-          <img class="reveal" src="assets/screenshots/mac-pointer-ja.jpg" width="1440" height="900" loading="lazy" alt="Tap Pointer for Mac：その操作を、鮮やかに。わかりやすく。常時追従・クリック演出・ドラッグ軌跡。">
-          <img class="reveal" src="assets/screenshots/mac-recording-ja.jpg" width="1440" height="900" loading="lazy" alt="Tap Pointer for Mac：魅せるデモを、このMacで。">
+          <img class="reveal" src="assets/screenshots/mac-pointer-ja.jpg" width="1440" height="900" loading="lazy" alt="Tap Pointer for Macのカーソル強調、クリック演出、ドラッグ軌跡の見本。">
+          <img class="reveal" src="assets/screenshots/mac-recording-ja.jpg" width="1440" height="900" loading="lazy" alt="Tap Pointer for Macの画面録画と音声の設定。">
         </div>
       </div>
     </section>
