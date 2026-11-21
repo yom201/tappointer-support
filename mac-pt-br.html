@@ -22,7 +22,7 @@
   <meta property="og:url" content="https://tappointer.com/mac-pt-br.html">
   <meta property="og:image" content="https://tappointer.com/assets/screenshots/mac-pointer-en.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="mac-lp.css">
+  <link rel="stylesheet" href="mac-lp.css?v=20261121-recording">
   <script id="software-app" type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -227,11 +227,41 @@
         </div>
         <div class="rec-grid">
           <div class="feats reveal">
-            <div class="feat"><svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linecap="round" aria-hidden="true"><rect x="5" y="9" width="42" height="28" rx="3"/><path d="M19 45h14M26 37v8"/></svg><div><h3>Escolha o que gravar</h3><p>Tela inteira · Uma janela · Área</p></div></div>
-            <div class="feat"><svg viewBox="0 0 52 52" fill="none" stroke="#ff3fa0" stroke-width="3" stroke-linecap="round" aria-hidden="true"><rect x="19" y="5" width="14" height="26" rx="7"/><path d="M12 25a14 14 0 0 0 28 0M26 39v8"/></svg><div><h3>Grave voz e som</h3><p>Microfone + áudio do sistema</p></div></div>
-            <div class="feat"><svg viewBox="0 0 52 52" fill="none" stroke="#5cf06a" stroke-width="3" aria-hidden="true"><rect x="4" y="12" width="44" height="28" rx="5"/><text x="26" y="32" text-anchor="middle" font-size="15" font-weight="800" fill="#5cf06a" stroke="none" font-family="-apple-system, sans-serif">HD</text></svg><div><h3>Defina a qualidade da gravação</h3><p>Full HD · 4K · 30/60 fps</p></div></div>
-            <div class="feat"><svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><circle cx="26" cy="26" r="21"/><path d="M21 17l13 9-13 9z"/></svg><div><h3>Inicie e pare com facilidade</h3><p>Contagem regressiva · atalhos · parada automática</p></div></div>
-            <div class="feat" id="camera-recording"><svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="13" width="28" height="26" rx="4"/><path d="M33 22l14-8v24l-14-8"/></svg><div><h3>Sua câmera na gravação</h3><p>Use a câmera integrada ou uma câmera externa. Você pode mover e redimensionar a imagem e desfocar o fundo.</p></div></div>
+            <div class="feat-item">
+              <button type="button" class="feat" data-recording-feature="capture" aria-expanded="false" aria-controls="recording-detail-capture">
+                <svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linecap="round" aria-hidden="true"><rect x="5" y="9" width="42" height="28" rx="3"/><path d="M19 45h14M26 37v8"/></svg>
+                <span><span class="feat-title">Escolha o que gravar</span><span class="feat-summary">Tela inteira · Uma janela · Área</span></span>
+              </button>
+              <p class="feat-detail" id="recording-detail-capture" hidden>Grave a tela inteira, uma janela ou a área delimitada ao arrastar.</p>
+            </div>
+            <div class="feat-item">
+              <button type="button" class="feat" data-recording-feature="audio" aria-expanded="false" aria-controls="recording-detail-audio">
+                <svg viewBox="0 0 52 52" fill="none" stroke="#ff3fa0" stroke-width="3" stroke-linecap="round" aria-hidden="true"><rect x="19" y="5" width="14" height="26" rx="7"/><path d="M12 25a14 14 0 0 0 28 0M26 39v8"/></svg>
+                <span><span class="feat-title">Grave voz e som</span><span class="feat-summary">Microfone + áudio do sistema</span></span>
+              </button>
+              <p class="feat-detail" id="recording-detail-audio" hidden>Escolha o microfone e ative o áudio do sistema para incluir os sons reproduzidos no Mac.</p>
+            </div>
+            <div class="feat-item">
+              <button type="button" class="feat" data-recording-feature="quality" aria-expanded="false" aria-controls="recording-detail-quality">
+                <svg viewBox="0 0 52 52" fill="none" stroke="#5cf06a" stroke-width="3" aria-hidden="true"><rect x="4" y="12" width="44" height="28" rx="5"/><text x="26" y="32" text-anchor="middle" font-size="15" font-weight="800" fill="#5cf06a" stroke="none" font-family="-apple-system, sans-serif">HD</text></svg>
+                <span><span class="feat-title">Defina a qualidade da gravação</span><span class="feat-summary">Full HD · 4K · 30/60 fps</span></span>
+              </button>
+              <p class="feat-detail" id="recording-detail-quality" hidden>Escolha Full HD ou 4K e selecione 30 ou 60 quadros por segundo.</p>
+            </div>
+            <div class="feat-item">
+              <button type="button" class="feat" data-recording-feature="controls" aria-expanded="false" aria-controls="recording-detail-controls">
+                <svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><circle cx="26" cy="26" r="21"/><path d="M21 17l13 9-13 9z"/></svg>
+                <span><span class="feat-title">Inicie e pare com facilidade</span><span class="feat-summary">Contagem regressiva · atalhos · parada automática</span></span>
+              </button>
+              <p class="feat-detail" id="recording-detail-controls" hidden>Prepare-se com a contagem regressiva, controle a gravação com atalhos ou defina um temporizador para parar automaticamente.</p>
+            </div>
+            <div class="feat-item" id="camera-recording">
+              <button type="button" class="feat" data-recording-feature="camera" aria-expanded="false" aria-controls="recording-detail-camera">
+                <svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="13" width="28" height="26" rx="4"/><path d="M33 22l14-8v24l-14-8"/></svg>
+                <span><span class="feat-title">Sua câmera na gravação</span><span class="feat-summary">Use a câmera integrada ou uma câmera externa. Você pode mover e redimensionar a imagem e desfocar o fundo.</span></span>
+              </button>
+              <p class="feat-detail" id="recording-detail-camera" hidden>Ative a sobreposição da câmera e ajuste a posição, o tamanho e o desfoque de fundo nas configurações da câmera.</p>
+            </div>
           </div>
           <div class="rec-stage reveal">
             <div class="mac">
@@ -329,6 +359,6 @@
       </nav>
     </div>
   </footer>
-  <script src="mac-lp.js" defer></script>
+  <script src="mac-lp.js?v=20261121-recording" defer></script>
 </body>
 </html>

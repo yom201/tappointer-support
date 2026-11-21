@@ -22,7 +22,7 @@
   <meta property="og:url" content="https://tappointer.com/mac-ja.html">
   <meta property="og:image" content="https://tappointer.com/assets/screenshots/mac-pointer-ja.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="mac-lp.css">
+  <link rel="stylesheet" href="mac-lp.css?v=20261121-recording">
   <script id="software-app" type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -227,11 +227,41 @@
         </div>
         <div class="rec-grid">
           <div class="feats reveal">
-            <div class="feat"><svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linecap="round" aria-hidden="true"><rect x="5" y="9" width="42" height="28" rx="3"/><path d="M19 45h14M26 37v8"/></svg><div><h3>録画する場所を選べる</h3><p>画面全体・アプリ・選択範囲</p></div></div>
-            <div class="feat"><svg viewBox="0 0 52 52" fill="none" stroke="#ff3fa0" stroke-width="3" stroke-linecap="round" aria-hidden="true"><rect x="19" y="5" width="14" height="26" rx="7"/><path d="M12 25a14 14 0 0 0 28 0M26 39v8"/></svg><div><h3>声も、デモの音も</h3><p>マイク＋システム音声</p></div></div>
-            <div class="feat"><svg viewBox="0 0 52 52" fill="none" stroke="#5cf06a" stroke-width="3" aria-hidden="true"><rect x="4" y="12" width="44" height="28" rx="5"/><text x="26" y="32" text-anchor="middle" font-size="15" font-weight="800" fill="#5cf06a" stroke="none" font-family="-apple-system, sans-serif">HD</text></svg><div><h3>画質も、なめらかさも</h3><p>フルHD・4K・30/60fps</p></div></div>
-            <div class="feat"><svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><circle cx="26" cy="26" r="21"/><path d="M21 17l13 9-13 9z"/></svg><div><h3>開始も停止もスムーズに</h3><p>カウントダウン・ショートカット・自動停止タイマー</p></div></div>
-            <div class="feat" id="camera-recording"><svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="13" width="28" height="26" rx="4"/><path d="M33 22l14-8v24l-14-8"/></svg><div><h3><span class="phrase">カメラ映像を</span><span class="phrase">重ねて録画</span></h3><p><span class="phrase">内蔵・外付けカメラ対応。</span><span class="phrase">位置と大きさを調整でき、</span><span class="phrase">背景もぼかせます。</span></p></div></div>
+            <div class="feat-item">
+              <button type="button" class="feat" data-recording-feature="capture" aria-expanded="false" aria-controls="recording-detail-capture">
+                <svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linecap="round" aria-hidden="true"><rect x="5" y="9" width="42" height="28" rx="3"/><path d="M19 45h14M26 37v8"/></svg>
+                <span><span class="feat-title"><span class="phrase">録画する場所を</span><span class="phrase">選べる</span></span><span class="feat-summary">画面全体・アプリ・選択範囲</span></span>
+              </button>
+              <p class="feat-detail" id="recording-detail-capture" hidden>画面全体、選んだウィンドウ、ドラッグで囲んだ範囲から録画対象を選べます。</p>
+            </div>
+            <div class="feat-item">
+              <button type="button" class="feat" data-recording-feature="audio" aria-expanded="false" aria-controls="recording-detail-audio">
+                <svg viewBox="0 0 52 52" fill="none" stroke="#ff3fa0" stroke-width="3" stroke-linecap="round" aria-hidden="true"><rect x="19" y="5" width="14" height="26" rx="7"/><path d="M12 25a14 14 0 0 0 28 0M26 39v8"/></svg>
+                <span><span class="feat-title"><span class="phrase">声も、</span><span class="phrase">デモの音も</span></span><span class="feat-summary">マイク＋システム音声</span></span>
+              </button>
+              <p class="feat-detail" id="recording-detail-audio" hidden>録画前にマイクを選びます。Macで再生中の音も入れるには「システム音声」をオンにします。</p>
+            </div>
+            <div class="feat-item">
+              <button type="button" class="feat" data-recording-feature="quality" aria-expanded="false" aria-controls="recording-detail-quality">
+                <svg viewBox="0 0 52 52" fill="none" stroke="#5cf06a" stroke-width="3" aria-hidden="true"><rect x="4" y="12" width="44" height="28" rx="5"/><text x="26" y="32" text-anchor="middle" font-size="15" font-weight="800" fill="#5cf06a" stroke="none" font-family="-apple-system, sans-serif">HD</text></svg>
+                <span><span class="feat-title"><span class="phrase">画質も、</span><span class="phrase">なめらかさも</span></span><span class="feat-summary">フルHD・4K・30/60fps</span></span>
+              </button>
+              <p class="feat-detail" id="recording-detail-quality" hidden>解像度はフルHDまたは4K、フレームレートは30または60fpsから選べます。</p>
+            </div>
+            <div class="feat-item">
+              <button type="button" class="feat" data-recording-feature="controls" aria-expanded="false" aria-controls="recording-detail-controls">
+                <svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><circle cx="26" cy="26" r="21"/><path d="M21 17l13 9-13 9z"/></svg>
+                <span><span class="feat-title"><span class="phrase">開始も停止も</span><span class="phrase">スムーズに</span></span><span class="feat-summary"><span class="phrase">カウントダウン・</span><span class="phrase">ショートカット・</span><span class="phrase">自動停止タイマー</span></span></span>
+              </button>
+              <p class="feat-detail" id="recording-detail-controls" hidden>カウントダウンで準備し、ショートカットで録画を操作できます。録画時間を指定すると自動で停止します。</p>
+            </div>
+            <div class="feat-item" id="camera-recording">
+              <button type="button" class="feat" data-recording-feature="camera" aria-expanded="false" aria-controls="recording-detail-camera">
+                <svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="13" width="28" height="26" rx="4"/><path d="M33 22l14-8v24l-14-8"/></svg>
+                <span><span class="feat-title"><span class="phrase">カメラ映像を</span><span class="phrase">重ねて録画</span></span><span class="feat-summary"><span class="phrase">内蔵・外付けの</span><span class="phrase">カメラに対応。</span><span class="phrase">位置と大きさを</span><span class="phrase">調整でき、</span><span class="phrase">背景もぼかせます。</span></span></span>
+              </button>
+              <p class="feat-detail" id="recording-detail-camera" hidden><span class="phrase">「カメラを重ねる」を</span><span class="phrase">オンにします。</span><span class="phrase">「カメラを調整…」で</span><span class="phrase">位置や大きさ、</span><span class="phrase">背景のぼかしを</span><span class="phrase">設定します。</span></p>
+            </div>
           </div>
           <div class="rec-stage reveal">
             <div class="mac">
@@ -253,7 +283,7 @@
               <div class="mac-base"></div>
               <span class="mac-caption">演出イメージ</span>
             </div>
-            <div class="center"><span class="save-pill">ポインター演出と一緒に、MP4で保存。</span></div>
+            <div class="center"><span class="save-pill"><span class="phrase">ポインター演出と一緒に、</span><span class="phrase">MP4で保存。</span></span></div>
           </div>
         </div>
         <p class="note" style="margin-top:22px">画質は収録元の解像度に依存します。</p>
@@ -329,6 +359,6 @@
       </nav>
     </div>
   </footer>
-  <script src="mac-lp.js" defer></script>
+  <script src="mac-lp.js?v=20261121-recording" defer></script>
 </body>
 </html>

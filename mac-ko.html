@@ -22,7 +22,7 @@
   <meta property="og:url" content="https://tappointer.com/mac-ko.html">
   <meta property="og:image" content="https://tappointer.com/assets/screenshots/mac-pointer-en.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="mac-lp.css">
+  <link rel="stylesheet" href="mac-lp.css?v=20261121-recording">
   <script id="software-app" type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -227,11 +227,41 @@
         </div>
         <div class="rec-grid">
           <div class="feats reveal">
-            <div class="feat"><svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linecap="round" aria-hidden="true"><rect x="5" y="9" width="42" height="28" rx="3"/><path d="M19 45h14M26 37v8"/></svg><div><h3>녹화할 대상 선택</h3><p>전체 화면 · 단일 윈도우 · 영역</p></div></div>
-            <div class="feat"><svg viewBox="0 0 52 52" fill="none" stroke="#ff3fa0" stroke-width="3" stroke-linecap="round" aria-hidden="true"><rect x="19" y="5" width="14" height="26" rx="7"/><path d="M12 25a14 14 0 0 0 28 0M26 39v8"/></svg><div><h3>목소리와 소리까지</h3><p>마이크 + 시스템 오디오</p></div></div>
-            <div class="feat"><svg viewBox="0 0 52 52" fill="none" stroke="#5cf06a" stroke-width="3" aria-hidden="true"><rect x="4" y="12" width="44" height="28" rx="5"/><text x="26" y="32" text-anchor="middle" font-size="15" font-weight="800" fill="#5cf06a" stroke="none" font-family="-apple-system, sans-serif">HD</text></svg><div><h3>녹화 품질 설정</h3><p>Full HD · 4K · 30/60 fps</p></div></div>
-            <div class="feat"><svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><circle cx="26" cy="26" r="21"/><path d="M21 17l13 9-13 9z"/></svg><div><h3>간편한 시작과 정지</h3><p>카운트다운 · 단축키 · 자동 정지 타이머</p></div></div>
-            <div class="feat" id="camera-recording"><svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="13" width="28" height="26" rx="4"/><path d="M33 22l14-8v24l-14-8"/></svg><div><h3>데모에 카메라 영상 넣기</h3><p>내장 또는 외장 카메라를 선택하세요. 영상의 위치와 크기를 조절하고 배경을 흐리게 할 수 있습니다.</p></div></div>
+            <div class="feat-item">
+              <button type="button" class="feat" data-recording-feature="capture" aria-expanded="false" aria-controls="recording-detail-capture">
+                <svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linecap="round" aria-hidden="true"><rect x="5" y="9" width="42" height="28" rx="3"/><path d="M19 45h14M26 37v8"/></svg>
+                <span><span class="feat-title">녹화할 대상 선택</span><span class="feat-summary">전체 화면 · 단일 윈도우 · 영역</span></span>
+              </button>
+              <p class="feat-detail" id="recording-detail-capture" hidden>전체 화면, 선택한 창, 드래그로 지정한 영역 중에서 녹화 대상을 선택하세요.</p>
+            </div>
+            <div class="feat-item">
+              <button type="button" class="feat" data-recording-feature="audio" aria-expanded="false" aria-controls="recording-detail-audio">
+                <svg viewBox="0 0 52 52" fill="none" stroke="#ff3fa0" stroke-width="3" stroke-linecap="round" aria-hidden="true"><rect x="19" y="5" width="14" height="26" rx="7"/><path d="M12 25a14 14 0 0 0 28 0M26 39v8"/></svg>
+                <span><span class="feat-title">목소리와 소리까지</span><span class="feat-summary">마이크 + 시스템 오디오</span></span>
+              </button>
+              <p class="feat-detail" id="recording-detail-audio" hidden>마이크를 선택한 다음, Mac에서 재생되는 소리도 담으려면 시스템 오디오를 켜세요.</p>
+            </div>
+            <div class="feat-item">
+              <button type="button" class="feat" data-recording-feature="quality" aria-expanded="false" aria-controls="recording-detail-quality">
+                <svg viewBox="0 0 52 52" fill="none" stroke="#5cf06a" stroke-width="3" aria-hidden="true"><rect x="4" y="12" width="44" height="28" rx="5"/><text x="26" y="32" text-anchor="middle" font-size="15" font-weight="800" fill="#5cf06a" stroke="none" font-family="-apple-system, sans-serif">HD</text></svg>
+                <span><span class="feat-title">녹화 품질 설정</span><span class="feat-summary">Full HD · 4K · 30/60 fps</span></span>
+              </button>
+              <p class="feat-detail" id="recording-detail-quality" hidden>Full HD 또는 4K 해상도와 초당 30 또는 60프레임을 선택하세요.</p>
+            </div>
+            <div class="feat-item">
+              <button type="button" class="feat" data-recording-feature="controls" aria-expanded="false" aria-controls="recording-detail-controls">
+                <svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><circle cx="26" cy="26" r="21"/><path d="M21 17l13 9-13 9z"/></svg>
+                <span><span class="feat-title">간편한 시작과 정지</span><span class="feat-summary">카운트다운 · 단축키 · 자동 정지 타이머</span></span>
+              </button>
+              <p class="feat-detail" id="recording-detail-controls" hidden>카운트다운으로 준비하고 단축키로 녹화를 제어하세요. 타이머를 설정하면 자동으로 멈춥니다.</p>
+            </div>
+            <div class="feat-item" id="camera-recording">
+              <button type="button" class="feat" data-recording-feature="camera" aria-expanded="false" aria-controls="recording-detail-camera">
+                <svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="13" width="28" height="26" rx="4"/><path d="M33 22l14-8v24l-14-8"/></svg>
+                <span><span class="feat-title">데모에 카메라 영상 넣기</span><span class="feat-summary">내장 또는 외장 카메라를 선택하세요. 영상의 위치와 크기를 조절하고 배경을 흐리게 할 수 있습니다.</span></span>
+              </button>
+              <p class="feat-detail" id="recording-detail-camera" hidden>카메라 오버레이를 켠 다음 카메라 설정에서 위치, 크기, 배경 흐림을 조정하세요.</p>
+            </div>
           </div>
           <div class="rec-stage reveal">
             <div class="mac">
@@ -329,6 +359,6 @@
       </nav>
     </div>
   </footer>
-  <script src="mac-lp.js" defer></script>
+  <script src="mac-lp.js?v=20261121-recording" defer></script>
 </body>
 </html>

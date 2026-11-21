@@ -324,8 +324,13 @@
     const frame = $('.cap-frame'), label = $('.cap-label'), count = $('.count');
     const pill = $('.rec-pill'), meter = $('.meter'), keys = $('.keys'), mp4 = $('.mp4');
     const timer = pill.querySelector('span');
-    const feats = [...document.querySelectorAll('.feat')];
+    const feats = [...rec.closest('#record').querySelectorAll('.feat')];
     const on = i => feats.forEach((f, j) => f.classList.toggle('on', j === i));
+    const preview = document.createElement('div');
+    preview.className = 'rec-preview';
+    preview.hidden = true;
+    preview.setAttribute('aria-hidden', 'true');
+    rec.append(preview);
     const modes = [
       { box: [0, 0, 100, 100], text: label.dataset.full, dash: false },
       { box: [50, 30, 42, 56], text: label.dataset.window, dash: false },
@@ -338,53 +343,149 @@
       label.style.opacity = 1;
     };
     const keyRow = (html) => { keys.innerHTML = html; keys.classList.add('show'); return [...keys.querySelectorAll('.kbd')]; };
-    const press = async ks => { ks.forEach(k => k.classList.add('hit')); await wait(220); ks.forEach(k => k.classList.remove('hit')); };
+    const press = async (ks, delay) => { ks.forEach(k => k.classList.add('hit')); await delay(220); ks.forEach(k => k.classList.remove('hit')); };
+    const startKeys = '<span class="kbd">⌘</span><span class="kbd">⇧</span><span class="kbd">R</span>';
+    const total = 5;
+    const leftWord = pill.dataset.left || 'left', leftFirst = pill.dataset.leftFirst === '1';
+    const showTime = (s, stopTimer = false) => {
+      const elapsed = `00:0${s}`;
+      const remaining = `00:0${total - s}`;
+      timer.textContent = stopTimer
+        ? `${elapsed} · ${leftFirst ? `${leftWord} ${remaining}` : `${remaining} ${leftWord}`}`
+        : elapsed;
+    };
+    const showRecording = () => { pill.classList.add('show'); meter.classList.add('show'); };
+    const resetScene = () => {
+      [count, keys, pill, meter, mp4].forEach(el => el.classList.remove('show'));
+      frame.style.opacity = 0;
+      label.style.opacity = 0;
+      preview.hidden = true;
+      preview.className = 'rec-preview';
+      preview.replaceChildren();
+      on(-1);
+    };
     let visible = false;
     new IntersectionObserver(e => { visible = e[0].isIntersecting; }).observe(rec);
     let autoStop = true;
 
-    const cycle = async () => {
-      on(0);
-      for (const m of modes) { setFrame(m); await wait(1300); }
-      on(3);
-      const start = keyRow('<span class="kbd">⌘</span><span class="kbd">⇧</span><span class="kbd">R</span>');
-      await wait(500); await press(start); await wait(300);
+    const captureModes = async delay => {
+      for (const mode of modes) { setFrame(mode); await delay(1300); }
+    };
+    const countdown = async delay => {
+      const start = keyRow(startKeys);
+      await delay(500); await press(start, delay); await delay(300);
       keys.classList.remove('show'); label.style.opacity = 0;
       for (const n of ['3', '2', '1']) {
-        count.textContent = n; count.classList.add('show'); await wait(650);
-        count.classList.remove('show'); await wait(200);
+        count.textContent = n; count.classList.add('show'); await delay(650);
+        count.classList.remove('show'); await delay(200);
       }
+    };
+    const cycle = async delay => {
+      on(0);
+      await captureModes(delay);
+      on(3);
+      await countdown(delay);
       on(1);
-      pill.classList.add('show'); meter.classList.add('show');
+      showRecording();
       autoStop = !autoStop;
-      const leftWord = pill.dataset.left || 'left', leftFirst = pill.dataset.leftFirst === '1';
-      const total = 5;
-      const show = s => {
-        const t = `00:0${s}`;
-        if (!autoStop) { timer.textContent = t; return; }
-        const r = `00:0${total - s}`;
-        timer.textContent = `${t} · ${leftFirst ? `${leftWord} ${r}` : `${r} ${leftWord}`}`;
-      };
       if (autoStop) {
         on(3);
-        for (let s = 0; s <= total; s++) { show(s); await wait(s === total ? 500 : 650); }
+        for (let s = 0; s <= total; s++) { showTime(s, true); await delay(s === total ? 500 : 650); }
       } else {
-        for (let s = 0; s <= 3; s++) { show(s); await wait(s === 3 ? 400 : 750); }
+        for (let s = 0; s <= 3; s++) { showTime(s); await delay(s === 3 ? 400 : 750); }
         on(2);
-        await wait(900);
+        await delay(900);
         on(3);
         const stop = keyRow('<span class="kbd">esc</span>');
-        await wait(400); await press(stop); await wait(120); await press(stop); await wait(300);
+        await delay(400); await press(stop, delay); await delay(120); await press(stop, delay); await delay(300);
       }
       pill.classList.remove('show'); meter.classList.remove('show'); keys.classList.remove('show');
       frame.style.opacity = 0;
-      mp4.classList.add('show'); await wait(2200);
-      mp4.classList.remove('show'); await wait(500);
+      mp4.classList.add('show'); await delay(2200);
+      mp4.classList.remove('show'); await delay(500);
     };
-    (async () => {
-      if (reduceMotion) { setFrame(modes[1]); pill.classList.add('show'); meter.classList.add('show'); return; }
-      for (;;) { if (!visible) { await wait(400); continue; } await cycle(); }
-    })();
+    const autoplay = async delay => {
+      if (reduceMotion) { setFrame(modes[1]); showTime(0); showRecording(); return; }
+      for (;;) {
+        if (visible) await cycle(delay);
+        else await delay(400);
+      }
+    };
+
+    // Only one playback owns the screen. Switching cancels its pending timer.
+    let playback;
+    const playRecording = async playScene => {
+      playback?.abort();
+      playback = new AbortController();
+      const { signal } = playback;
+      const delay = ms => new Promise((resolve, reject) => {
+        signal.throwIfAborted();
+        const abort = () => { clearTimeout(timerId); reject(signal.reason); };
+        const timerId = setTimeout(() => { signal.removeEventListener('abort', abort); resolve(); }, ms);
+        signal.addEventListener('abort', abort, { once: true });
+      });
+      resetScene();
+      try { await playScene(delay); }
+      catch (error) { if (error !== signal.reason) throw error; }
+    };
+    const playFeature = async (button, index, delay) => {
+      if (!reduceMotion) {
+        while (!visible) await delay(200);
+      }
+      on(index);
+      switch (button.dataset.recordingFeature) {
+      case 'capture':
+        if (reduceMotion) setFrame(modes[2]);
+        else await captureModes(delay);
+        break;
+      case 'audio':
+        showTime(0);
+        showRecording();
+        break;
+      case 'quality':
+        preview.classList.add('quality');
+        preview.textContent = button.querySelector('.feat-summary').textContent.trim();
+        preview.hidden = false;
+        break;
+      case 'controls':
+        if (!reduceMotion) await countdown(delay);
+        showTime(0, true);
+        showRecording();
+        break;
+      case 'camera':
+        preview.classList.add('camera');
+        preview.append(button.querySelector('svg').cloneNode(true));
+        preview.hidden = false;
+        break;
+      }
+      if (reduceMotion) return;
+      await delay(5500);
+      resetScene();
+      await autoplay(delay);
+    };
+
+    let expanded;
+    feats.forEach((button, index) => {
+      if (!button.matches('button[data-recording-feature]')) return;
+      const detail = document.getElementById(button.getAttribute('aria-controls'));
+      button.addEventListener('click', () => {
+        const wasExpanded = expanded?.button === button;
+        if (expanded) {
+          expanded.button.setAttribute('aria-expanded', 'false');
+          expanded.detail.hidden = true;
+          expanded = undefined;
+        }
+        if (wasExpanded) {
+          playRecording(autoplay);
+          return;
+        }
+        expanded = { button, detail };
+        button.setAttribute('aria-expanded', 'true');
+        detail.hidden = false;
+        playRecording(delay => playFeature(button, index, delay));
+      });
+    });
+    playRecording(autoplay);
   }
 
   // Fade sections in as they scroll into view.
