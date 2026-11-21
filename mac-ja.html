@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Macの画面録画を音声付きで、クリックも見える | Tap Pointer</title>
-  <meta name="description" content="Macの画面を、マイク音声やシステム音声と一緒に録画。マウスカーソル、クリック、ドラッグを強調し、演出ごとMP4に保存できます。">
+  <meta name="description" content="Macの画面をマイクやシステム音声と一緒に録画。内蔵・外付けカメラの映像を重ね、カーソルやクリックの演出ごとMP4に保存できます。">
   <meta name="robots" content="max-image-preview:large">
   <link rel="canonical" href="https://tappointer.com/mac-ja.html">
   <link rel="alternate" hreflang="en" href="https://tappointer.com/mac.html">
@@ -18,7 +18,7 @@
   <link rel="icon" type="image/png" href="assets/brand/mac-app-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Macの画面録画を音声付きで、クリックも見える | Tap Pointer">
-  <meta property="og:description" content="Macの画面を、マイク音声やシステム音声と一緒に録画。マウスカーソル、クリック、ドラッグを強調し、演出ごとMP4に保存できます。">
+  <meta property="og:description" content="Macの画面をマイクやシステム音声と一緒に録画。内蔵・外付けカメラの映像を重ね、カーソルやクリックの演出ごとMP4に保存できます。">
   <meta property="og:url" content="https://tappointer.com/mac-ja.html">
   <meta property="og:image" content="https://tappointer.com/assets/screenshots/mac-pointer-ja.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -32,7 +32,7 @@
   "url": "https://tappointer.com/mac.html",
   "mainEntityOfPage": "https://tappointer.com/mac-ja.html",
   "inLanguage": "ja",
-  "description": "Macの画面を、マイク音声やシステム音声と一緒に録画。マウスカーソル、クリック、ドラッグを強調し、演出ごとMP4に保存できます。",
+  "description": "Macの画面をマイクやシステム音声と一緒に録画。内蔵・外付けカメラの映像を重ね、カーソルやクリックの演出ごとMP4に保存できます。",
   "image": "https://tappointer.com/assets/screenshots/mac-pointer-ja.jpg",
   "operatingSystem": "macOS 15 or later",
   "applicationCategory": "MultimediaApplication",
@@ -64,7 +64,7 @@
       <div class="wrap hero-grid">
         <div>
           <h1 class="h-hero"><span class="phrase">Macの画面を</span><br><span class="grad phrase">音声付きで録画</span></h1>
-          <p class="lead">マイクとシステム音声を録音しながら、カーソル・クリック・ドラッグを強調。演出を含めて録画に残せます。</p>
+          <p class="lead">マイクとシステム音声を録音しながら、カーソル・クリック・ドラッグを強調。演出を含めて録画に残せます。<span class="phrase">カメラ映像も</span><span class="phrase">重ねられるようになりました。</span></p>
           <div class="chips">
             <span class="chip" style="--c: var(--cyan)"><i></i>常時追従</span>
             <span class="chip" style="--c: var(--green)"><i></i>クリック演出</span>
@@ -231,6 +231,7 @@
             <div class="feat"><svg viewBox="0 0 52 52" fill="none" stroke="#ff3fa0" stroke-width="3" stroke-linecap="round" aria-hidden="true"><rect x="19" y="5" width="14" height="26" rx="7"/><path d="M12 25a14 14 0 0 0 28 0M26 39v8"/></svg><div><h3>声も、デモの音も</h3><p>マイク＋システム音声</p></div></div>
             <div class="feat"><svg viewBox="0 0 52 52" fill="none" stroke="#5cf06a" stroke-width="3" aria-hidden="true"><rect x="4" y="12" width="44" height="28" rx="5"/><text x="26" y="32" text-anchor="middle" font-size="15" font-weight="800" fill="#5cf06a" stroke="none" font-family="-apple-system, sans-serif">HD</text></svg><div><h3>画質も、なめらかさも</h3><p>フルHD・4K・30/60fps</p></div></div>
             <div class="feat"><svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><circle cx="26" cy="26" r="21"/><path d="M21 17l13 9-13 9z"/></svg><div><h3>開始も停止もスムーズに</h3><p>カウントダウン・ショートカット・自動停止タイマー</p></div></div>
+            <div class="feat" id="camera-recording"><svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="13" width="28" height="26" rx="4"/><path d="M33 22l14-8v24l-14-8"/></svg><div><h3><span class="phrase">カメラ映像を</span><span class="phrase">重ねて録画</span></h3><p><span class="phrase">内蔵・外付けカメラ対応。</span><span class="phrase">位置と大きさを調整でき、</span><span class="phrase">背景もぼかせます。</span></p></div></div>
           </div>
           <div class="rec-stage reveal">
             <div class="mac">
@@ -273,6 +274,8 @@
         <div>
           <h2 class="h-sec">録画のよくある質問</h2>
           <div class="recording-answers">
+            <h3><span class="phrase">カメラ映像を</span><span class="phrase">重ねるには？</span></h3>
+            <p>「録画」のカメラ欄で<span class="phrase">「カメラを重ねる」</span>をオンにします。<span class="phrase">「カメラを調整…」</span>で使うカメラを選び、位置と大きさを設定します。初回はmacOSでカメラの使用を許可してください。</p>
             <h3><span class="phrase">声とMacの音を</span><span class="phrase">同時に録れますか？</span></h3>
             <p>はい。選んだマイクの音が入り、システム音声をオンにするとMacの再生音も入ります。デモを録る前に、不要な音を出すアプリを閉じておくと安心です。</p>
             <h3><span class="phrase">画面録画に音が</span><span class="phrase">入らないときは？</span></h3>
