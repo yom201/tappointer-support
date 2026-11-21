@@ -10,21 +10,21 @@
     manage: 'Linkでの管理・解約', refund: '返金条件',
     agree: '上記の月額料金と自動更新に同意します。',
     checkout: 'Stripeの決済へ進む', confirmationTitle: 'Mac版の契約',
-    restore: 'Tap Pointer for Macの設定で「Mac版の購入を復元」を選び、購入時のメールアドレスを入力してください。',
-    download: 'Mac版をダウンロード', plus: 'スマホのPlusで使う', support: 'サポート', privacy: 'プライバシー',
+    restore: '支払い後はMacアプリに戻ってください。「契約・利用状況」の「復元コードを表示」で、買い替えに備えてコードを保管できます。',
+    download: 'Mac版をダウンロード', plus: '早期利用者の無償特典', support: 'サポート', privacy: 'プライバシー',
     unavailable: '現在、購入の受付を開始していません。',
     fromApp: 'カード不要の7日間トライアルはMacアプリから始められます。終了後、アプリで「月額1.49米ドルで続ける」を選んでください。',
-    expired: 'この決済ページを利用できません。Macアプリからもう一度開いてください。すでに支払った場合はアプリで購入を復元できます。',
-    pending: '購入を確認しています。確認に時間がかかる場合は、領収メールが届いてからアプリで復元してください。',
-    ready: '購入を確認しました。アプリで購入を復元してください。',
+    expired: 'この決済ページを利用できません。Macアプリからもう一度開いてください。すでにお支払いの場合は、アプリで「支払い状況を確認」を選んでください。',
+    pending: '支払い確認を待っています。アプリに戻り「支払い状況を確認」を選ぶこともできます。',
+    ready: '支払いを確認しました。Macアプリに戻ってください。',
     notReady: '利用権を確認できませんでした。サポートへお問い合わせください。',
     test: 'テスト決済',
   } : {
     unavailable: 'Purchases are not open yet.',
     fromApp: 'Start your 7-day trial in the Mac app without entering payment details. After the trial ends, choose “Continue for US$1.49/Month” in the app.',
-    expired: 'This checkout is unavailable. Open it again from the Mac app. If you already paid, restore access in the app.',
-    pending: 'We’re checking your purchase. If payment takes longer, restore it in the app after you receive a receipt.',
-    ready: 'Your purchase is ready. Restore it in the Mac app.',
+    expired: 'This checkout is unavailable. Open it again from the Mac app. If you already paid, choose Check Purchase Status in the Mac app.',
+    pending: 'We’re checking your payment. You can also choose Check Purchase Status in the Mac app.',
+    ready: 'Your payment is confirmed. Return to the Mac app.',
     notReady: 'We could not confirm access. Please contact support.',
     test: 'Test checkout',
   };
@@ -103,7 +103,7 @@
           return;
         }
       } catch {
-        // The app's restore entry point remains available during a temporary outage.
+        // The Mac app can also check payment status.
       }
       if (attempt < 7) await new Promise(resolve => setTimeout(resolve, 2500));
     }
