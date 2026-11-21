@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="referrer" content="no-referrer">
+  <title>Subscribe to Tap Pointer for Mac</title>
+  <link rel="stylesheet" href="mac-lp.css">
+  <script src="mac-buy.js" defer></script>
+  <style>
+    .purchase { min-height: 100vh; padding: clamp(24px, 6vw, 72px) 18px; }
+    .purchase-card { width: 100%; max-width: 620px; margin: auto; padding: clamp(18px, 5vw, 36px);
+      border: 1px solid rgba(255,255,255,.18); border-radius: 20px; background: #101920; }
+    .purchase section { padding: 0; }
+    .purchase h1 { font-size: clamp(24px, 5vw, 38px); margin: 12px 0; }
+    .purchase h1, .purchase a { word-break: auto-phrase; }
+    .purchase nav a { display: inline-block; }
+    .purchase p { margin: 14px 0; }
+    .purchase nav { display: flex; flex-wrap: wrap; gap: 10px 18px; }
+    .purchase a { color: #9bf4f0; text-underline-offset: 3px; }
+    .purchase .checkout { display: inline-block; color: #07161a; background: #80ece6; text-decoration: none;
+      font: inherit; font-weight: 750; border: 0; border-radius: 10px; padding: 10px 17px; margin-bottom: 8px; }
+    .purchase .checkout:disabled { opacity: .55; }
+    .purchase .consent { display: flex; gap: 10px; margin: 18px 0; align-items: baseline; }
+    .purchase .consent input { flex: none; }
+    .purchase [hidden] { display: none !important; }
+  </style>
+</head>
+<body class="purchase">
+  <main class="purchase-card">
+    <b>Tap Pointer for Mac</b>
+    <section id="offer">
+      <h1 data-copy="buyTitle">Continue using the Mac edition</h1>
+      <p data-copy="terms">US$1.49 per month including applicable tax. Your first payment starts the subscription. It renews monthly from that date until you cancel.</p>
+      <p data-copy="currency">Stripe may offer to charge in your local currency. Checkout shows the exchange rate and total before you pay. Local-currency prices can include a conversion fee.</p>
+      <p data-copy="compatible">Requires macOS 15 or later. Use on up to two Macs. Sign in to Link to manage payments. Connect to the internet at least once a day to keep access active.</p>
+      <p data-copy="cancel">To stop the next charge, cancel in Link before your next billing date. Access normally continues through the paid period. Link handles eligible refund requests.</p>
+      <nav aria-label="Link">
+        <a href="https://support.link.com/topics/sold-through-link" data-copy="manage">Manage or cancel on Link</a>
+        <a href="https://support.link.com/questions/requesting-a-refund-for-a-sold-through-link-payment" data-copy="refund">Refund conditions</a>
+      </nav>
+      <form id="consent-form" hidden>
+        <label class="consent"><input id="agree" type="checkbox" required><span data-copy="agree">I agree to the monthly price and automatic renewal described above.</span></label>
+        <button id="checkout" type="submit" class="checkout" data-copy="checkout">Continue to Stripe Checkout</button>
+      </form>
+      <p id="offer-status" role="status"></p>
+    </section>
+    <section id="confirmation" hidden>
+      <h1 data-copy="confirmationTitle">Your Mac subscription</h1>
+      <p id="confirmation-status" role="status"></p>
+      <p data-copy="restore">Open Tap Pointer for Mac and select Restore Mac Purchase. Enter the email address you used at checkout.</p>
+      <p><a href="https://license.tappointer.com/download/mac" data-copy="download">Download for Mac</a></p>
+    </section>
+    <nav aria-label="Tap Pointer">
+      <a href="mac-download.html" data-copy="plus">Use your phone’s Plus plan</a>
+      <a href="mac-support.html" data-copy="support">Support</a>
+      <a href="mac-privacy-policy.html" data-copy="privacy">Privacy</a>
+    </nav>
+  </main>
+</body>
+</html>
