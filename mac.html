@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mac Screen Recorder with Audio &amp; Click Highlights | Tap Pointer</title>
-  <meta name="description" content="Record your Mac screen with microphone and system audio. Add a built-in or external camera overlay and save your demo with cursor and click effects as an MP4.">
+  <meta name="description" content="Record your Mac screen with microphone and system audio and a camera overlay. Zoom into details, trim recordings, and mask sensitive areas before sharing an MP4.">
   <meta name="robots" content="max-image-preview:large">
   <link rel="canonical" href="https://tappointer.com/mac.html">
   <link rel="alternate" hreflang="en" href="https://tappointer.com/mac.html">
@@ -18,11 +18,11 @@
   <link rel="icon" type="image/png" href="assets/brand/mac-app-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Mac Screen Recorder with Audio &amp; Click Highlights | Tap Pointer">
-  <meta property="og:description" content="Record your Mac screen with microphone and system audio. Add a built-in or external camera overlay and save your demo with cursor and click effects as an MP4.">
+  <meta property="og:description" content="Record your Mac screen with microphone and system audio and a camera overlay. Zoom into details, trim recordings, and mask sensitive areas before sharing an MP4.">
   <meta property="og:url" content="https://tappointer.com/mac.html">
   <meta property="og:image" content="https://tappointer.com/assets/screenshots/mac-pointer-en.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="mac-lp.css?v=20261121-recording">
+  <link rel="stylesheet" href="mac-lp.css?v=20261122-features">
   <script id="software-app" type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -32,7 +32,7 @@
   "url": "https://tappointer.com/mac.html",
   "mainEntityOfPage": "https://tappointer.com/mac.html",
   "inLanguage": "en",
-  "description": "Record your Mac screen with microphone and system audio. Add a built-in or external camera overlay and save your demo with cursor and click effects as an MP4.",
+  "description": "Record your Mac screen with microphone and system audio and a camera overlay. Zoom into details, trim recordings, and mask sensitive areas before sharing an MP4.",
   "image": "https://tappointer.com/assets/screenshots/mac-pointer-en.jpg",
   "operatingSystem": "macOS 15 or later",
   "applicationCategory": "MultimediaApplication",
@@ -156,6 +156,7 @@
           <span><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="13" fill="none" stroke="#0a84ff" stroke-width="3"/></svg>Left click: solid outline</span>
           <span><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="13" fill="none" stroke="#0a84ff" stroke-width="3" stroke-dasharray="5 4"/></svg>Right click: dashed outline</span>
         </div>
+        <p class="note center">Set the left and right click effects independently. You can turn off the effect for either button.</p>
       </div>
     </section>
 
@@ -195,10 +196,10 @@
               </div>
             </div>
             <div class="ctl"><span class="lbl">Left click</span>
-              <div class="seg" data-ctl="left"><button type="button" data-v="ripple" aria-pressed="true">Ripple</button><button type="button" data-v="circle" aria-pressed="false">Circle</button><button type="button" data-v="labeledCircle" aria-pressed="false">L/R</button></div>
+              <div class="seg" data-ctl="left"><button type="button" data-v="ripple" aria-pressed="true">Ripple</button><button type="button" data-v="circle" aria-pressed="false">Circle</button><button type="button" data-v="labeledCircle" aria-pressed="false">L/R</button><button type="button" data-v="none" aria-pressed="false">Off</button></div>
             </div>
             <div class="ctl"><span class="lbl">Right click</span>
-              <div class="seg" data-ctl="right"><button type="button" data-v="ripple" aria-pressed="true">Ripple</button><button type="button" data-v="circle" aria-pressed="false">Circle</button><button type="button" data-v="labeledCircle" aria-pressed="false">L/R</button></div>
+              <div class="seg" data-ctl="right"><button type="button" data-v="ripple" aria-pressed="true">Ripple</button><button type="button" data-v="circle" aria-pressed="false">Circle</button><button type="button" data-v="labeledCircle" aria-pressed="false">L/R</button><button type="button" data-v="none" aria-pressed="false">Off</button></div>
             </div>
             <div class="ctl"><label for="c-size">Size <output for="c-size" data-fmt="{v} pt"></output></label><input id="c-size" type="range" min="50" max="220" value="110" data-ctl="size"></div>
             <div class="ctl"><label for="c-dur">Duration <output for="c-dur" data-fmt="{v} s"></output></label><input id="c-dur" type="range" min="0.3" max="4" step="0.1" value="1.2" data-ctl="duration"></div>
@@ -215,6 +216,19 @@
             <p class="note">These ranges match the settings in the Mac app. This page is a simulation.</p>
           </form>
         </div>
+      </div>
+    </section>
+
+    <section id="screen-zoom" class="feature-zoom" aria-labelledby="screen-zoom-heading">
+      <div class="wrap guide-grid">
+        <div>
+          <h2 id="screen-zoom-heading" class="h-sec">Make the small details visible</h2>
+          <p class="lead">Keep the pointer still and hold the left button for about half a second to zoom in around it. Right-click to go back to normal.</p>
+        </div>
+        <article class="feature-card">
+          <h3>Pick the magnification you need</h3>
+          <p>Enable screen zoom and select 1.5×, 2×, 2.5×, 3× or 4× in Effects or from the menu bar. On first use, follow the app’s prompts to grant Screen Recording and Accessibility access.</p>
+        </article>
       </div>
     </section>
 
@@ -237,30 +251,30 @@
             <div class="feat-item">
               <button type="button" class="feat" data-recording-feature="audio" aria-expanded="false" aria-controls="recording-detail-audio">
                 <svg viewBox="0 0 52 52" fill="none" stroke="#ff3fa0" stroke-width="3" stroke-linecap="round" aria-hidden="true"><rect x="19" y="5" width="14" height="26" rx="7"/><path d="M12 25a14 14 0 0 0 28 0M26 39v8"/></svg>
-                <span><span class="feat-title">Capture voice and sound</span><span class="feat-summary">Microphone + system audio</span></span>
+                <span><span class="feat-title">Capture voice and sound</span><span class="feat-summary">Test your mic and capture system audio</span></span>
               </button>
-              <p class="feat-detail" id="recording-detail-audio" hidden>Choose your microphone, then turn on system audio to include sounds playing on your Mac.</p>
+              <p class="feat-detail" id="recording-detail-audio" hidden>Choose a microphone and check its input meter before you record. Enable system audio to include sound from apps and browsers on your Mac.</p>
             </div>
             <div class="feat-item">
               <button type="button" class="feat" data-recording-feature="quality" aria-expanded="false" aria-controls="recording-detail-quality">
                 <svg viewBox="0 0 52 52" fill="none" stroke="#5cf06a" stroke-width="3" aria-hidden="true"><rect x="4" y="12" width="44" height="28" rx="5"/><text x="26" y="32" text-anchor="middle" font-size="15" font-weight="800" fill="#5cf06a" stroke="none" font-family="-apple-system, sans-serif">HD</text></svg>
-                <span><span class="feat-title">Set your recording quality</span><span class="feat-summary">Full HD · 4K · 30/60 fps</span></span>
+                <span><span class="feat-title">Set your recording quality</span><span class="feat-summary">Full HD, 4K or original · 30/60 fps</span></span>
               </button>
-              <p class="feat-detail" id="recording-detail-quality" hidden>Choose Full HD or 4K, then select 30 or 60 frames per second.</p>
+              <p class="feat-detail" id="recording-detail-quality" hidden>Choose Full HD, 4K or the source resolution at 30 or 60 fps. Your recording is saved as an MP4 in the folder you choose.</p>
             </div>
             <div class="feat-item">
               <button type="button" class="feat" data-recording-feature="controls" aria-expanded="false" aria-controls="recording-detail-controls">
                 <svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><circle cx="26" cy="26" r="21"/><path d="M21 17l13 9-13 9z"/></svg>
-                <span><span class="feat-title">Start and stop with ease</span><span class="feat-summary">Countdown · shortcuts · auto stop timer</span></span>
+                <span><span class="feat-title">Start and stop with ease</span><span class="feat-summary">Pause, resume, shortcuts and auto-stop</span></span>
               </button>
-              <p class="feat-detail" id="recording-detail-controls" hidden>Use the countdown to get ready, control recording with shortcuts, or set a timer to stop automatically.</p>
+              <p class="feat-detail" id="recording-detail-controls" hidden>Choose a 3-, 5- or 10-second countdown, start and stop shortcuts, and an auto-stop timer. Use the movable recording indicator to pause and resume. Paused time is left out of the video.</p>
             </div>
             <div class="feat-item" id="camera-recording">
               <button type="button" class="feat" data-recording-feature="camera" aria-expanded="false" aria-controls="recording-detail-camera">
                 <svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="13" width="28" height="26" rx="4"/><path d="M33 22l14-8v24l-14-8"/></svg>
                 <span><span class="feat-title">Add your camera to the demo</span><span class="feat-summary">Use a built-in or external camera. Move and resize the overlay, and blur the background if you like.</span></span>
               </button>
-              <p class="feat-detail" id="recording-detail-camera" hidden>Turn on the camera overlay, then use Adjust Camera to set its position, size, and background blur.</p>
+              <p class="feat-detail" id="recording-detail-camera" hidden>Choose the built-in or an external camera. Check the enlarged live preview, then place and resize the overlay. Choose a landscape rectangle, circle, portrait rectangle, heart or star, and blur the background if you like.</p>
             </div>
           </div>
           <div class="rec-stage reveal">
@@ -287,6 +301,23 @@
           </div>
         </div>
         <p class="note" style="margin-top:22px">Recording quality depends on the source resolution.</p>
+      </div>
+    </section>
+
+    <section id="edit" class="feature-edit" aria-labelledby="edit-heading">
+      <div class="wrap">
+        <h2 id="edit-heading" class="h-sec">Get your recording ready to share</h2>
+        <p class="lead">Open a video with Edit Recording and save the finished edit as a separate MP4.</p>
+        <div class="feature-details">
+          <article class="feature-card">
+            <h3>Cut out unwanted sections</h3>
+            <p>Set and clear the start and end flags independently on the timeline. After a cut, the duration updates and you can play the edited video right away.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Cover what you want to keep private</h3>
+            <p>Draw a solid black rectangle over details such as personal information or notifications. Choose where it appears and for how long.</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -345,6 +376,17 @@
           <a class="btn primary" href="https://license.tappointer.com/download/mac">Download for Mac</a>
         </div>
         <p class="plan-note">If you previously activated the Mac app through iOS, the latest version stays free for you.<br><a href="mac-download.html#english">Mac setup guide</a></p>
+        <div class="feature-details">
+          <article class="feature-card">
+            <h3>Manage and restore access</h3>
+            <p>Check your access and purchase status in the app, open the official purchase page or manage your subscription. Show your recovery code and use it to restore your subscription on another Mac.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Check for updates in the app</h3>
+            <p>Check for a new version in Settings or from the menu bar and open the official download page. Allow macOS notifications if you want to be alerted to updates.</p>
+          </article>
+        </div>
+        <p class="note center preferences-note">Match your Mac’s language or choose from seven languages. You can also copy the support email address and control crash reporting in the app.</p>
       </div>
     </section>
   </main>
@@ -359,6 +401,6 @@
       </nav>
     </div>
   </footer>
-  <script src="mac-lp.js?v=20261121-recording" defer></script>
+  <script src="mac-lp.js?v=20261122-features" defer></script>
 </body>
 </html>

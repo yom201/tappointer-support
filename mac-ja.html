@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Macの画面録画を音声付きで、クリックも見える | Tap Pointer</title>
-  <meta name="description" content="Macの画面をマイクやシステム音声と一緒に録画。内蔵・外付けカメラの映像を重ね、カーソルやクリックの演出ごとMP4に保存できます。">
+  <meta name="description" content="Macの画面をマイク・システム音声・カメラと一緒に録画。画面ズームで細部を見せ、録画の不要区間をカットしたり、指定範囲を目隠ししたりできます。">
   <meta name="robots" content="max-image-preview:large">
   <link rel="canonical" href="https://tappointer.com/mac-ja.html">
   <link rel="alternate" hreflang="en" href="https://tappointer.com/mac.html">
@@ -18,11 +18,11 @@
   <link rel="icon" type="image/png" href="assets/brand/mac-app-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Macの画面録画を音声付きで、クリックも見える | Tap Pointer">
-  <meta property="og:description" content="Macの画面をマイクやシステム音声と一緒に録画。内蔵・外付けカメラの映像を重ね、カーソルやクリックの演出ごとMP4に保存できます。">
+  <meta property="og:description" content="Macの画面をマイク・システム音声・カメラと一緒に録画。画面ズームで細部を見せ、録画の不要区間をカットしたり、指定範囲を目隠ししたりできます。">
   <meta property="og:url" content="https://tappointer.com/mac-ja.html">
   <meta property="og:image" content="https://tappointer.com/assets/screenshots/mac-pointer-ja.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="mac-lp.css?v=20261121-recording">
+  <link rel="stylesheet" href="mac-lp.css?v=20261122-features">
   <script id="software-app" type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -32,7 +32,7 @@
   "url": "https://tappointer.com/mac.html",
   "mainEntityOfPage": "https://tappointer.com/mac-ja.html",
   "inLanguage": "ja",
-  "description": "Macの画面をマイクやシステム音声と一緒に録画。内蔵・外付けカメラの映像を重ね、カーソルやクリックの演出ごとMP4に保存できます。",
+  "description": "Macの画面をマイク・システム音声・カメラと一緒に録画。画面ズームで細部を見せ、録画の不要区間をカットしたり、指定範囲を目隠ししたりできます。",
   "image": "https://tappointer.com/assets/screenshots/mac-pointer-ja.jpg",
   "operatingSystem": "macOS 15 or later",
   "applicationCategory": "MultimediaApplication",
@@ -156,6 +156,7 @@
           <span><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="13" fill="none" stroke="#0a84ff" stroke-width="3"/></svg>左クリック：実線の輪郭</span>
           <span><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="13" fill="none" stroke="#0a84ff" stroke-width="3" stroke-dasharray="5 4"/></svg>右クリック：破線の輪郭</span>
         </div>
+        <p class="note center">左クリックと右クリックで別々の演出を選べます。片方だけ演出をオフにすることもできます。</p>
       </div>
     </section>
 
@@ -195,10 +196,10 @@
               </div>
             </div>
             <div class="ctl"><span class="lbl">左クリック</span>
-              <div class="seg" data-ctl="left"><button type="button" data-v="ripple" aria-pressed="true">波紋</button><button type="button" data-v="circle" aria-pressed="false">円のみ</button><button type="button" data-v="labeledCircle" aria-pressed="false">L／R</button></div>
+              <div class="seg" data-ctl="left"><button type="button" data-v="ripple" aria-pressed="true">波紋</button><button type="button" data-v="circle" aria-pressed="false">円のみ</button><button type="button" data-v="labeledCircle" aria-pressed="false">L／R</button><button type="button" data-v="none" aria-pressed="false">なし</button></div>
             </div>
             <div class="ctl"><span class="lbl">右クリック</span>
-              <div class="seg" data-ctl="right"><button type="button" data-v="ripple" aria-pressed="true">波紋</button><button type="button" data-v="circle" aria-pressed="false">円のみ</button><button type="button" data-v="labeledCircle" aria-pressed="false">L／R</button></div>
+              <div class="seg" data-ctl="right"><button type="button" data-v="ripple" aria-pressed="true">波紋</button><button type="button" data-v="circle" aria-pressed="false">円のみ</button><button type="button" data-v="labeledCircle" aria-pressed="false">L／R</button><button type="button" data-v="none" aria-pressed="false">なし</button></div>
             </div>
             <div class="ctl"><label for="c-size">大きさ <output for="c-size" data-fmt="{v} pt"></output></label><input id="c-size" type="range" min="50" max="220" value="110" data-ctl="size"></div>
             <div class="ctl"><label for="c-dur">表示時間 <output for="c-dur" data-fmt="{v} 秒"></output></label><input id="c-dur" type="range" min="0.3" max="4" step="0.1" value="1.2" data-ctl="duration"></div>
@@ -215,6 +216,19 @@
             <p class="note">範囲はMac版の設定と同じです。このページの表示は見本です。</p>
           </form>
         </div>
+      </div>
+    </section>
+
+    <section id="screen-zoom" class="feature-zoom" aria-labelledby="screen-zoom-heading">
+      <div class="wrap guide-grid">
+        <div>
+          <h2 id="screen-zoom-heading" class="h-sec"><span class="phrase">見せたい部分を</span><span class="phrase">画面ズームで拡大</span></h2>
+          <p class="lead">プレゼン中にポインターを止めて左ボタンを<span class="phrase">約0.5秒長押し</span>すると、その位置を中心に拡大します。右クリックで元の表示に戻れます。</p>
+        </div>
+        <article class="feature-card">
+          <h3>場面に合わせて倍率を調整</h3>
+          <p>「演出」またはメニューバーからオン／オフと倍率を設定できます。倍率は1.5倍、2倍、2.5倍、3倍、4倍。初回はアプリの案内から画面収録とアクセシビリティを許可します。</p>
+        </article>
       </div>
     </section>
 
@@ -237,30 +251,30 @@
             <div class="feat-item">
               <button type="button" class="feat" data-recording-feature="audio" aria-expanded="false" aria-controls="recording-detail-audio">
                 <svg viewBox="0 0 52 52" fill="none" stroke="#ff3fa0" stroke-width="3" stroke-linecap="round" aria-hidden="true"><rect x="19" y="5" width="14" height="26" rx="7"/><path d="M12 25a14 14 0 0 0 28 0M26 39v8"/></svg>
-                <span><span class="feat-title"><span class="phrase">声も、</span><span class="phrase">デモの音も</span></span><span class="feat-summary">マイク＋システム音声</span></span>
+                <span><span class="feat-title"><span class="phrase">声も、</span><span class="phrase">デモの音も</span></span><span class="feat-summary"><span class="phrase">録画前のマイクテスト、</span><span class="phrase">システム音声</span></span></span>
               </button>
-              <p class="feat-detail" id="recording-detail-audio" hidden>録画前にマイクを選びます。Macで再生中の音も入れるには「システム音声」をオンにします。</p>
+              <p class="feat-detail" id="recording-detail-audio" hidden>使うマイクを選び、録画前に入力レベルをメーターで確認できます。アプリやブラウザーの再生音も録るには「システム音声」をオンにします。</p>
             </div>
             <div class="feat-item">
               <button type="button" class="feat" data-recording-feature="quality" aria-expanded="false" aria-controls="recording-detail-quality">
                 <svg viewBox="0 0 52 52" fill="none" stroke="#5cf06a" stroke-width="3" aria-hidden="true"><rect x="4" y="12" width="44" height="28" rx="5"/><text x="26" y="32" text-anchor="middle" font-size="15" font-weight="800" fill="#5cf06a" stroke="none" font-family="-apple-system, sans-serif">HD</text></svg>
-                <span><span class="feat-title"><span class="phrase">画質も、</span><span class="phrase">なめらかさも</span></span><span class="feat-summary">フルHD・4K・30/60fps</span></span>
+                <span><span class="feat-title"><span class="phrase">画質も、</span><span class="phrase">なめらかさも</span></span><span class="feat-summary"><span class="phrase">フルHD・4K、</span><span class="phrase">元の解像度、</span> <span class="phrase">30／60 fps</span></span></span>
               </button>
-              <p class="feat-detail" id="recording-detail-quality" hidden>解像度はフルHDまたは4K、フレームレートは30または60fpsから選べます。</p>
+              <p class="feat-detail" id="recording-detail-quality" hidden>解像度はフルHD、4K、元の解像度から選べます。30または60 fpsに設定して、指定したフォルダにMP4を保存します。</p>
             </div>
             <div class="feat-item">
               <button type="button" class="feat" data-recording-feature="controls" aria-expanded="false" aria-controls="recording-detail-controls">
                 <svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><circle cx="26" cy="26" r="21"/><path d="M21 17l13 9-13 9z"/></svg>
-                <span><span class="feat-title"><span class="phrase">開始も停止も</span><span class="phrase">スムーズに</span></span><span class="feat-summary"><span class="phrase">カウントダウン・</span><span class="phrase">ショートカット・</span><span class="phrase">自動停止タイマー</span></span></span>
+                <span><span class="feat-title"><span class="phrase">開始も停止も</span><span class="phrase">スムーズに</span></span><span class="feat-summary"><span class="phrase">一時停止・再開、</span><span class="phrase">ショートカット、</span><span class="phrase">自動停止</span></span></span>
               </button>
-              <p class="feat-detail" id="recording-detail-controls" hidden>カウントダウンで準備し、ショートカットで録画を操作できます。録画時間を指定すると自動で停止します。</p>
+              <p class="feat-detail" id="recording-detail-controls" hidden>3・5・10秒のカウントダウン、開始と停止のショートカット、自動停止タイマーを設定できます。録画中はインジケーターで一時停止・再開でき、休止中は録画時間に入りません。インジケーターの位置も動かせます。</p>
             </div>
             <div class="feat-item" id="camera-recording">
               <button type="button" class="feat" data-recording-feature="camera" aria-expanded="false" aria-controls="recording-detail-camera">
                 <svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="13" width="28" height="26" rx="4"/><path d="M33 22l14-8v24l-14-8"/></svg>
                 <span><span class="feat-title"><span class="phrase">カメラ映像を</span><span class="phrase">重ねて録画</span></span><span class="feat-summary"><span class="phrase">内蔵・外付けの</span><span class="phrase">カメラに対応。</span><span class="phrase">位置と大きさを</span><span class="phrase">調整でき、</span><span class="phrase">背景もぼかせます。</span></span></span>
               </button>
-              <p class="feat-detail" id="recording-detail-camera" hidden><span class="phrase">「カメラを重ねる」を</span><span class="phrase">オンにします。</span><span class="phrase">「カメラを調整…」で</span><span class="phrase">位置や大きさ、</span><span class="phrase">背景のぼかしを</span><span class="phrase">設定します。</span></p>
+              <p class="feat-detail" id="recording-detail-camera" hidden>内蔵・外付けカメラを選べます。「カメラを調整…」の拡大プレビューで映り方を確認し、録画の中での位置と大きさを調整。枠は横長の四角、円、縦長の四角、ハート、星から選べて、背景のぼかしも設定できます。</p>
             </div>
           </div>
           <div class="rec-stage reveal">
@@ -287,6 +301,23 @@
           </div>
         </div>
         <p class="note" style="margin-top:22px">画質は収録元の解像度に依存します。</p>
+      </div>
+    </section>
+
+    <section id="edit" class="feature-edit" aria-labelledby="edit-heading">
+      <div class="wrap">
+        <h2 id="edit-heading" class="h-sec"><span class="phrase">録画を開いて</span><span class="phrase">共有前に仕上げる</span></h2>
+        <p class="lead">「録画を編集…」で動画を開き、共有用に整えた結果を別のMP4として保存できます。</p>
+        <div class="feature-details">
+          <article class="feature-card">
+            <h3>いらない区間をカット</h3>
+            <p>タイムラインの開始旗と終了旗をそれぞれ設定・解除できます。不要な区間をカットすると、編集後の長さに変わり、そのまま再生して確認できます。</p>
+          </article>
+          <article class="feature-card">
+            <h3><span class="phrase">時間と場所を指定して</span><span class="phrase">目隠し</span></h3>
+            <p>個人情報や通知など、見せたくない箇所を黒い四角で覆えます。動画の中で、目隠しを出す時間と画面上の位置を指定できます。</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -345,6 +376,17 @@
           <a class="btn primary" href="https://license.tappointer.com/download/mac">Mac版をダウンロード</a>
         </div>
         <p class="plan-note"><span class="phrase">旧iOS認証でお使いの方は、</span><span class="phrase">最新版でも無償で使えます。</span><br><a href="mac-download.html">使い始める手順</a></p>
+        <div class="feature-details">
+          <article class="feature-card">
+            <h3>契約・利用権を管理</h3>
+            <p>アプリで利用状況や購入結果を確認し、公式購入ページや契約管理を開けます。復元コードを表示でき、Macの買い替え時に契約を復元できます。</p>
+          </article>
+          <article class="feature-card">
+            <h3>アプリから更新を確認</h3>
+            <p>設定やメニューバーから新版を確認し、公式ダウンロードページを開けます。更新通知を受け取る場合は、macOSの通知を許可します。</p>
+          </article>
+        </div>
+        <p class="note center preferences-note">表示言語はMacに合わせるか7言語から選べます。問い合わせ先のコピーやクラッシュ報告の設定もアプリから行えます。</p>
       </div>
     </section>
   </main>
@@ -359,6 +401,6 @@
       </nav>
     </div>
   </footer>
-  <script src="mac-lp.js?v=20261121-recording" defer></script>
+  <script src="mac-lp.js?v=20261122-features" defer></script>
 </body>
 </html>

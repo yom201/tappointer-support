@@ -50,6 +50,7 @@
 
     click(button) {
       if (this.o.keepTrail) this.trails = [];
+      if ((button === 'R' ? this.o.right : this.o.left) === 'none') return;
       this.effects.push({ x: this.pos.x, y: this.pos.y, t: now(), b: button });
     }
 
@@ -118,6 +119,7 @@
         const p = (t - e.t) / life;
         const x = e.x * w, y = e.y * h;
         const style = e.b === 'R' ? o.right : o.left;
+        if (style === 'none') continue;
         const fade = 1 - p;
         const d = o.size * k;
         ctx.setLineDash(e.b === 'R' ? [Math.max(4, 7 * k), Math.max(3, 5 * k)] : []);

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>소리와 클릭 효과를 담는 Mac 화면 녹화 | Tap Pointer</title>
-  <meta name="description" content="Mac 화면을 마이크와 시스템 소리까지 녹화하세요. 내장 또는 외장 카메라 영상을 겹쳐 넣고 커서와 클릭 효과가 담긴 데모를 MP4로 저장할 수 있습니다.">
+  <meta name="description" content="마이크와 시스템 오디오, 카메라를 포함해 Mac 화면을 녹화하세요. 화면을 확대하고, 불필요한 구간을 잘라내거나 민감한 부분을 가린 뒤 MP4로 공유할 수 있습니다.">
   <meta name="robots" content="max-image-preview:large">
   <link rel="canonical" href="https://tappointer.com/mac-ko.html">
   <link rel="alternate" hreflang="en" href="https://tappointer.com/mac.html">
@@ -18,11 +18,11 @@
   <link rel="icon" type="image/png" href="assets/brand/mac-app-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:title" content="소리와 클릭 효과를 담는 Mac 화면 녹화 | Tap Pointer">
-  <meta property="og:description" content="Mac 화면을 마이크와 시스템 소리까지 녹화하세요. 내장 또는 외장 카메라 영상을 겹쳐 넣고 커서와 클릭 효과가 담긴 데모를 MP4로 저장할 수 있습니다.">
+  <meta property="og:description" content="마이크와 시스템 오디오, 카메라를 포함해 Mac 화면을 녹화하세요. 화면을 확대하고, 불필요한 구간을 잘라내거나 민감한 부분을 가린 뒤 MP4로 공유할 수 있습니다.">
   <meta property="og:url" content="https://tappointer.com/mac-ko.html">
   <meta property="og:image" content="https://tappointer.com/assets/screenshots/mac-pointer-en.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="mac-lp.css?v=20261121-recording">
+  <link rel="stylesheet" href="mac-lp.css?v=20261122-features">
   <script id="software-app" type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -32,7 +32,7 @@
   "url": "https://tappointer.com/mac.html",
   "mainEntityOfPage": "https://tappointer.com/mac-ko.html",
   "inLanguage": "ko",
-  "description": "Mac 화면을 마이크와 시스템 소리까지 녹화하세요. 내장 또는 외장 카메라 영상을 겹쳐 넣고 커서와 클릭 효과가 담긴 데모를 MP4로 저장할 수 있습니다.",
+  "description": "마이크와 시스템 오디오, 카메라를 포함해 Mac 화면을 녹화하세요. 화면을 확대하고, 불필요한 구간을 잘라내거나 민감한 부분을 가린 뒤 MP4로 공유할 수 있습니다.",
   "image": "https://tappointer.com/assets/screenshots/mac-pointer-en.jpg",
   "operatingSystem": "macOS 15 or later",
   "applicationCategory": "MultimediaApplication",
@@ -156,6 +156,7 @@
           <span><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="13" fill="none" stroke="#0a84ff" stroke-width="3"/></svg>왼쪽 클릭: 실선 테두리</span>
           <span><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="13" fill="none" stroke="#0a84ff" stroke-width="3" stroke-dasharray="5 4"/></svg>오른쪽 클릭: 점선 테두리</span>
         </div>
+        <p class="note center">왼쪽과 오른쪽 클릭 효과를 따로 설정할 수 있습니다. 한쪽 효과만 끄는 것도 가능합니다.</p>
       </div>
     </section>
 
@@ -195,10 +196,10 @@
               </div>
             </div>
             <div class="ctl"><span class="lbl">왼쪽 클릭</span>
-              <div class="seg" data-ctl="left"><button type="button" data-v="ripple" aria-pressed="true">물결</button><button type="button" data-v="circle" aria-pressed="false">원</button><button type="button" data-v="labeledCircle" aria-pressed="false">L/R</button></div>
+              <div class="seg" data-ctl="left"><button type="button" data-v="ripple" aria-pressed="true">물결</button><button type="button" data-v="circle" aria-pressed="false">원</button><button type="button" data-v="labeledCircle" aria-pressed="false">L/R</button><button type="button" data-v="none" aria-pressed="false">없음</button></div>
             </div>
             <div class="ctl"><span class="lbl">오른쪽 클릭</span>
-              <div class="seg" data-ctl="right"><button type="button" data-v="ripple" aria-pressed="true">물결</button><button type="button" data-v="circle" aria-pressed="false">원</button><button type="button" data-v="labeledCircle" aria-pressed="false">L/R</button></div>
+              <div class="seg" data-ctl="right"><button type="button" data-v="ripple" aria-pressed="true">물결</button><button type="button" data-v="circle" aria-pressed="false">원</button><button type="button" data-v="labeledCircle" aria-pressed="false">L/R</button><button type="button" data-v="none" aria-pressed="false">없음</button></div>
             </div>
             <div class="ctl"><label for="c-size">크기 <output for="c-size" data-fmt="{v} pt"></output></label><input id="c-size" type="range" min="50" max="220" value="110" data-ctl="size"></div>
             <div class="ctl"><label for="c-dur">표시 시간 <output for="c-dur" data-fmt="{v}초"></output></label><input id="c-dur" type="range" min="0.3" max="4" step="0.1" value="1.2" data-ctl="duration"></div>
@@ -215,6 +216,19 @@
             <p class="note">범위는 Mac 앱의 설정과 같습니다. 이 페이지는 시뮬레이션입니다.</p>
           </form>
         </div>
+      </div>
+    </section>
+
+    <section id="screen-zoom" class="feature-zoom" aria-labelledby="screen-zoom-heading">
+      <div class="wrap guide-grid">
+        <div>
+          <h2 id="screen-zoom-heading" class="h-sec">작은 부분까지 잘 보이게 확대</h2>
+          <p class="lead">포인터를 움직이지 않고 왼쪽 버튼을 약 0.5초간 누르면 그 위치를 중심으로 확대됩니다. 오른쪽 버튼을 클릭하면 원래대로 돌아옵니다.</p>
+        </div>
+        <article class="feature-card">
+          <h3>화면에 맞게 확대 배율 선택</h3>
+          <p>효과 설정이나 메뉴 막대에서 화면 확대를 켜고 1.5배, 2배, 2.5배, 3배, 4배 중 선택하세요. 처음에는 앱의 안내에 따라 화면 기록과 손쉬운 사용 권한을 허용하세요.</p>
+        </article>
       </div>
     </section>
 
@@ -237,30 +251,30 @@
             <div class="feat-item">
               <button type="button" class="feat" data-recording-feature="audio" aria-expanded="false" aria-controls="recording-detail-audio">
                 <svg viewBox="0 0 52 52" fill="none" stroke="#ff3fa0" stroke-width="3" stroke-linecap="round" aria-hidden="true"><rect x="19" y="5" width="14" height="26" rx="7"/><path d="M12 25a14 14 0 0 0 28 0M26 39v8"/></svg>
-                <span><span class="feat-title">목소리와 소리까지</span><span class="feat-summary">마이크 + 시스템 오디오</span></span>
+                <span><span class="feat-title">목소리와 소리까지</span><span class="feat-summary">마이크 테스트 및 시스템 오디오 녹음</span></span>
               </button>
-              <p class="feat-detail" id="recording-detail-audio" hidden>마이크를 선택한 다음, Mac에서 재생되는 소리도 담으려면 시스템 오디오를 켜세요.</p>
+              <p class="feat-detail" id="recording-detail-audio" hidden>사용할 마이크를 고르고 녹화 전에 입력 레벨을 확인하세요. 앱이나 브라우저에서 재생되는 소리까지 담으려면 시스템 오디오를 켜세요.</p>
             </div>
             <div class="feat-item">
               <button type="button" class="feat" data-recording-feature="quality" aria-expanded="false" aria-controls="recording-detail-quality">
                 <svg viewBox="0 0 52 52" fill="none" stroke="#5cf06a" stroke-width="3" aria-hidden="true"><rect x="4" y="12" width="44" height="28" rx="5"/><text x="26" y="32" text-anchor="middle" font-size="15" font-weight="800" fill="#5cf06a" stroke="none" font-family="-apple-system, sans-serif">HD</text></svg>
-                <span><span class="feat-title">녹화 품질 설정</span><span class="feat-summary">Full HD · 4K · 30/60 fps</span></span>
+                <span><span class="feat-title">녹화 품질 설정</span><span class="feat-summary">Full HD, 4K, 원본 · 30/60fps</span></span>
               </button>
-              <p class="feat-detail" id="recording-detail-quality" hidden>Full HD 또는 4K 해상도와 초당 30 또는 60프레임을 선택하세요.</p>
+              <p class="feat-detail" id="recording-detail-quality" hidden>Full HD, 4K 또는 원본 해상도와 30 또는 60fps를 선택할 수 있습니다. 지정한 폴더에 MP4로 저장됩니다.</p>
             </div>
             <div class="feat-item">
               <button type="button" class="feat" data-recording-feature="controls" aria-expanded="false" aria-controls="recording-detail-controls">
                 <svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><circle cx="26" cy="26" r="21"/><path d="M21 17l13 9-13 9z"/></svg>
-                <span><span class="feat-title">간편한 시작과 정지</span><span class="feat-summary">카운트다운 · 단축키 · 자동 정지 타이머</span></span>
+                <span><span class="feat-title">간편한 시작과 정지</span><span class="feat-summary">일시 정지, 재개, 단축키, 자동 정지</span></span>
               </button>
-              <p class="feat-detail" id="recording-detail-controls" hidden>카운트다운으로 준비하고 단축키로 녹화를 제어하세요. 타이머를 설정하면 자동으로 멈춥니다.</p>
+              <p class="feat-detail" id="recording-detail-controls" hidden>3초, 5초, 10초 카운트다운과 시작·정지 단축키, 자동 정지 타이머를 설정할 수 있습니다. 위치를 옮길 수 있는 녹화 표시에서 일시 정지하거나 재개하세요. 멈춘 시간은 영상에 포함되지 않습니다.</p>
             </div>
             <div class="feat-item" id="camera-recording">
               <button type="button" class="feat" data-recording-feature="camera" aria-expanded="false" aria-controls="recording-detail-camera">
                 <svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="13" width="28" height="26" rx="4"/><path d="M33 22l14-8v24l-14-8"/></svg>
                 <span><span class="feat-title">데모에 카메라 영상 넣기</span><span class="feat-summary">내장 또는 외장 카메라를 선택하세요. 영상의 위치와 크기를 조절하고 배경을 흐리게 할 수 있습니다.</span></span>
               </button>
-              <p class="feat-detail" id="recording-detail-camera" hidden>카메라 오버레이를 켠 다음 카메라 설정에서 위치, 크기, 배경 흐림을 조정하세요.</p>
+              <p class="feat-detail" id="recording-detail-camera" hidden>내장 또는 외장 카메라를 골라 확대 미리보기로 화면을 확인하세요. 영상에 넣을 위치와 크기를 조정하고 가로 사각형, 원, 세로 사각형, 하트, 별 중 하나를 선택하거나 배경을 흐리게 할 수 있습니다.</p>
             </div>
           </div>
           <div class="rec-stage reveal">
@@ -287,6 +301,23 @@
           </div>
         </div>
         <p class="note" style="margin-top:22px">녹화 품질은 원본 해상도에 따라 달라집니다.</p>
+      </div>
+    </section>
+
+    <section id="edit" class="feature-edit" aria-labelledby="edit-heading">
+      <div class="wrap">
+        <h2 id="edit-heading" class="h-sec">공유하기 전에 녹화 영상 편집</h2>
+        <p class="lead">녹화 편집 기능에서 영상을 열고 완성본을 별도의 MP4로 저장하세요.</p>
+        <div class="feature-details">
+          <article class="feature-card">
+            <h3>필요 없는 구간 잘라내기</h3>
+            <p>타임라인에서 시작과 끝 표시를 각각 지정하거나 해제할 수 있습니다. 구간을 잘라내면 새 재생 시간이 반영되며 편집한 영상을 바로 재생할 수 있습니다.</p>
+          </article>
+          <article class="feature-card">
+            <h3>보여 주고 싶지 않은 부분 가리기</h3>
+            <p>개인정보나 알림 위에 검은 사각형을 그려 가릴 수 있습니다. 영상에서 가림이 나타나는 위치와 시간을 정하세요.</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -345,6 +376,17 @@
           <a class="btn primary" href="https://license.tappointer.com/download/mac">Mac용 다운로드</a>
         </div>
         <p class="plan-note">iOS 앱을 통해 Mac에서 이미 인증했다면 최신 버전도 무료로 이용할 수 있습니다.<br><a href="mac-download.html#english">Mac 설치 안내</a></p>
+        <div class="feature-details">
+          <article class="feature-card">
+            <h3>이용권 관리 및 복원</h3>
+            <p>앱에서 이용권과 구매 상태를 확인하고 공식 구매 페이지를 열거나 구독을 관리하세요. 복원 코드를 확인해 다른 Mac에서 구독을 복원할 수 있습니다.</p>
+          </article>
+          <article class="feature-card">
+            <h3>앱에서 업데이트 확인</h3>
+            <p>설정이나 메뉴 막대에서 새 버전을 확인하고 공식 다운로드 페이지를 열 수 있습니다. 업데이트 알림을 받으려면 macOS 알림을 허용하세요.</p>
+          </article>
+        </div>
+        <p class="note center preferences-note">Mac의 언어를 따르거나 7개 언어 중에서 선택할 수 있습니다. 지원 이메일 주소 복사와 충돌 보고 설정도 앱에서 할 수 있습니다.</p>
       </div>
     </section>
   </main>
@@ -359,6 +401,6 @@
       </nav>
     </div>
   </footer>
-  <script src="mac-lp.js?v=20261121-recording" defer></script>
+  <script src="mac-lp.js?v=20261122-features" defer></script>
 </body>
 </html>

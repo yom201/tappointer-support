@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mac 螢幕錄影含聲音與滑鼠點擊效果 | Tap Pointer</title>
-  <meta name="description" content="錄製 Mac 螢幕，同時收錄麥克風與系統聲音。疊加內建或外接相機的畫面，將游標和點擊特效一併儲存成 MP4。">
+  <meta name="description" content="錄製 Mac 螢幕時收錄麥克風與系統音訊，並疊加相機畫面。放大畫面細節、剪掉多餘片段或遮住敏感資訊，最後匯出 MP4。">
   <meta name="robots" content="max-image-preview:large">
   <link rel="canonical" href="https://tappointer.com/mac-zh-hant.html">
   <link rel="alternate" hreflang="en" href="https://tappointer.com/mac.html">
@@ -18,11 +18,11 @@
   <link rel="icon" type="image/png" href="assets/brand/mac-app-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Mac 螢幕錄影含聲音與滑鼠點擊效果 | Tap Pointer">
-  <meta property="og:description" content="錄製 Mac 螢幕，同時收錄麥克風與系統聲音。疊加內建或外接相機的畫面，將游標和點擊特效一併儲存成 MP4。">
+  <meta property="og:description" content="錄製 Mac 螢幕時收錄麥克風與系統音訊，並疊加相機畫面。放大畫面細節、剪掉多餘片段或遮住敏感資訊，最後匯出 MP4。">
   <meta property="og:url" content="https://tappointer.com/mac-zh-hant.html">
   <meta property="og:image" content="https://tappointer.com/assets/screenshots/mac-pointer-en.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="mac-lp.css?v=20261121-recording">
+  <link rel="stylesheet" href="mac-lp.css?v=20261122-features">
   <script id="software-app" type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -32,7 +32,7 @@
   "url": "https://tappointer.com/mac.html",
   "mainEntityOfPage": "https://tappointer.com/mac-zh-hant.html",
   "inLanguage": "zh-Hant",
-  "description": "錄製 Mac 螢幕，同時收錄麥克風與系統聲音。疊加內建或外接相機的畫面，將游標和點擊特效一併儲存成 MP4。",
+  "description": "錄製 Mac 螢幕時收錄麥克風與系統音訊，並疊加相機畫面。放大畫面細節、剪掉多餘片段或遮住敏感資訊，最後匯出 MP4。",
   "image": "https://tappointer.com/assets/screenshots/mac-pointer-en.jpg",
   "operatingSystem": "macOS 15 or later",
   "applicationCategory": "MultimediaApplication",
@@ -156,6 +156,7 @@
           <span><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="13" fill="none" stroke="#0a84ff" stroke-width="3"/></svg>左鍵：實線外框</span>
           <span><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="13" fill="none" stroke="#0a84ff" stroke-width="3" stroke-dasharray="5 4"/></svg>右鍵：虛線外框</span>
         </div>
+        <p class="note center">左鍵和右鍵的點擊特效可分開設定，也可只關閉其中一個按鍵的特效。</p>
       </div>
     </section>
 
@@ -195,10 +196,10 @@
               </div>
             </div>
             <div class="ctl"><span class="lbl">按一下左鍵</span>
-              <div class="seg" data-ctl="left"><button type="button" data-v="ripple" aria-pressed="true">波紋</button><button type="button" data-v="circle" aria-pressed="false">圓</button><button type="button" data-v="labeledCircle" aria-pressed="false">L/R</button></div>
+              <div class="seg" data-ctl="left"><button type="button" data-v="ripple" aria-pressed="true">波紋</button><button type="button" data-v="circle" aria-pressed="false">圓</button><button type="button" data-v="labeledCircle" aria-pressed="false">L/R</button><button type="button" data-v="none" aria-pressed="false">關閉</button></div>
             </div>
             <div class="ctl"><span class="lbl">按右鍵</span>
-              <div class="seg" data-ctl="right"><button type="button" data-v="ripple" aria-pressed="true">波紋</button><button type="button" data-v="circle" aria-pressed="false">圓</button><button type="button" data-v="labeledCircle" aria-pressed="false">L/R</button></div>
+              <div class="seg" data-ctl="right"><button type="button" data-v="ripple" aria-pressed="true">波紋</button><button type="button" data-v="circle" aria-pressed="false">圓</button><button type="button" data-v="labeledCircle" aria-pressed="false">L/R</button><button type="button" data-v="none" aria-pressed="false">關閉</button></div>
             </div>
             <div class="ctl"><label for="c-size">大小 <output for="c-size" data-fmt="{v} pt"></output></label><input id="c-size" type="range" min="50" max="220" value="110" data-ctl="size"></div>
             <div class="ctl"><label for="c-dur">顯示時間 <output for="c-dur" data-fmt="{v} 秒"></output></label><input id="c-dur" type="range" min="0.3" max="4" step="0.1" value="1.2" data-ctl="duration"></div>
@@ -215,6 +216,19 @@
             <p class="note">範圍與 Mac App 的設定相同。本頁為模擬畫面。</p>
           </form>
         </div>
+      </div>
+    </section>
+
+    <section id="screen-zoom" class="feature-zoom" aria-labelledby="screen-zoom-heading">
+      <div class="wrap guide-grid">
+        <div>
+          <h2 id="screen-zoom-heading" class="h-sec">放大畫面，讓細節更清楚</h2>
+          <p class="lead">保持游標不動，按住滑鼠左鍵約 0.5 秒，即可放大游標周圍的畫面。按一下右鍵就會恢復原本大小。</p>
+        </div>
+        <article class="feature-card">
+          <h3>依畫面選擇放大倍率</h3>
+          <p>在特效設定或選單列開啟畫面縮放，並選擇 1.5、2、2.5、3 或 4 倍。首次使用時，依應用程式的提示授予螢幕錄製與輔助使用權限。</p>
+        </article>
       </div>
     </section>
 
@@ -237,30 +251,30 @@
             <div class="feat-item">
               <button type="button" class="feat" data-recording-feature="audio" aria-expanded="false" aria-controls="recording-detail-audio">
                 <svg viewBox="0 0 52 52" fill="none" stroke="#ff3fa0" stroke-width="3" stroke-linecap="round" aria-hidden="true"><rect x="19" y="5" width="14" height="26" rx="7"/><path d="M12 25a14 14 0 0 0 28 0M26 39v8"/></svg>
-                <span><span class="feat-title">收錄人聲與聲音</span><span class="feat-summary">麥克風＋系統音訊</span></span>
+                <span><span class="feat-title">收錄人聲與聲音</span><span class="feat-summary">測試麥克風並錄製系統音訊</span></span>
               </button>
-              <p class="feat-detail" id="recording-detail-audio" hidden>選擇麥克風後，開啟系統音訊即可一併錄下 Mac 正在播放的聲音。</p>
+              <p class="feat-detail" id="recording-detail-audio" hidden>選好麥克風後，可在錄影前查看輸入音量。開啟系統音訊，還能錄下 Mac 上應用程式或瀏覽器播放的聲音。</p>
             </div>
             <div class="feat-item">
               <button type="button" class="feat" data-recording-feature="quality" aria-expanded="false" aria-controls="recording-detail-quality">
                 <svg viewBox="0 0 52 52" fill="none" stroke="#5cf06a" stroke-width="3" aria-hidden="true"><rect x="4" y="12" width="44" height="28" rx="5"/><text x="26" y="32" text-anchor="middle" font-size="15" font-weight="800" fill="#5cf06a" stroke="none" font-family="-apple-system, sans-serif">HD</text></svg>
-                <span><span class="feat-title">設定錄影品質</span><span class="feat-summary">Full HD · 4K · 30/60 fps</span></span>
+                <span><span class="feat-title">設定錄影品質</span><span class="feat-summary">Full HD、4K、原始解析度 · 30/60 fps</span></span>
               </button>
-              <p class="feat-detail" id="recording-detail-quality" hidden>解析度可選 Full HD 或 4K，影格率可選每秒 30 或 60 格。</p>
+              <p class="feat-detail" id="recording-detail-quality" hidden>解析度可選 Full HD、4K 或原始解析度，影格率可選每秒 30 或 60 格。錄影會以 MP4 存到指定的資料夾。</p>
             </div>
             <div class="feat-item">
               <button type="button" class="feat" data-recording-feature="controls" aria-expanded="false" aria-controls="recording-detail-controls">
                 <svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><circle cx="26" cy="26" r="21"/><path d="M21 17l13 9-13 9z"/></svg>
-                <span><span class="feat-title">輕鬆開始與停止</span><span class="feat-summary">倒數計時・快速鍵・自動停止計時器</span></span>
+                <span><span class="feat-title">輕鬆開始與停止</span><span class="feat-summary">暫停、繼續、快捷鍵與自動停止</span></span>
               </button>
-              <p class="feat-detail" id="recording-detail-controls" hidden>可用倒數做準備、以快捷鍵控制錄影，或設定計時器自動停止。</p>
+              <p class="feat-detail" id="recording-detail-controls" hidden>可設定 3、5 或 10 秒倒數、開始與停止的快捷鍵，以及自動停止計時器。使用可移動的錄影指示器暫停或繼續，暫停期間不會錄進影片。</p>
             </div>
             <div class="feat-item" id="camera-recording">
               <button type="button" class="feat" data-recording-feature="camera" aria-expanded="false" aria-controls="recording-detail-camera">
                 <svg viewBox="0 0 52 52" fill="none" stroke="#19e3ff" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="13" width="28" height="26" rx="4"/><path d="M33 22l14-8v24l-14-8"/></svg>
                 <span><span class="feat-title">錄影時疊加相機畫面</span><span class="feat-summary">支援內建與外接相機，可調整畫面的位置和大小，也可模糊背景。</span></span>
               </button>
-              <p class="feat-detail" id="recording-detail-camera" hidden>開啟相機子母畫面後，可在相機設定中調整位置、大小和背景模糊效果。</p>
+              <p class="feat-detail" id="recording-detail-camera" hidden>選用內建或外接相機，在放大的即時預覽中確認畫面，再調整疊加的位置與大小。外框可選橫向矩形、圓形、直向矩形、愛心或星形，也能模糊背景。</p>
             </div>
           </div>
           <div class="rec-stage reveal">
@@ -287,6 +301,23 @@
           </div>
         </div>
         <p class="note" style="margin-top:22px">錄影品質取決於來源解析度。</p>
+      </div>
+    </section>
+
+    <section id="edit" class="feature-edit" aria-labelledby="edit-heading">
+      <div class="wrap">
+        <h2 id="edit-heading" class="h-sec">分享前先整理錄影</h2>
+        <p class="lead">用錄影編輯功能開啟影片，完成後另存成一個 MP4。</p>
+        <div class="feature-details">
+          <article class="feature-card">
+            <h3>剪掉不需要的片段</h3>
+            <p>在時間軸上個別設定或取消開始與結束旗標。剪輯後會更新影片長度，可立即播放確認。</p>
+          </article>
+          <article class="feature-card">
+            <h3>遮住不想公開的內容</h3>
+            <p>以不透明的黑色矩形遮住個人資料或通知。可指定遮罩的位置，以及在影片中出現的時間。</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -345,6 +376,17 @@
           <a class="btn primary" href="https://license.tappointer.com/download/mac">下載 Mac 版</a>
         </div>
         <p class="plan-note">曾透過 iOS 版啟用 Mac 的使用者，可以繼續免費使用最新版。<br><a href="mac-download.html#english">Mac 安裝指南</a></p>
+        <div class="feature-details">
+          <article class="feature-card">
+            <h3>管理及復原使用權</h3>
+            <p>在應用程式內查詢使用權與購買狀態、開啟官方購買頁面或管理訂閱。可顯示復原碼，換 Mac 時用來復原訂閱。</p>
+          </article>
+          <article class="feature-card">
+            <h3>在應用程式內檢查更新</h3>
+            <p>在設定或選單列查看是否有新版本，並開啟官方下載頁面。想接收更新提醒時，可允許 macOS 通知。</p>
+          </article>
+        </div>
+        <p class="note center preferences-note">顯示語言可跟隨 Mac，或從 7 種語言中選擇。也能在應用程式內複製客服信箱與設定當機報告。</p>
       </div>
     </section>
   </main>
@@ -359,6 +401,6 @@
       </nav>
     </div>
   </footer>
-  <script src="mac-lp.js?v=20261121-recording" defer></script>
+  <script src="mac-lp.js?v=20261122-features" defer></script>
 </body>
 </html>
