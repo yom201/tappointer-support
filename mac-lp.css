@@ -250,9 +250,13 @@ footer a:hover { color: var(--ink); }
 }
 .recording-guide { scroll-margin-top: 48px; }
 
-.feature-zoom, .feature-edit { padding-block: clamp(68px, 7vw, 88px); scroll-margin-top: 48px; }
+.feature-zoom, .feature-edit, .claude-cursor { padding-block: clamp(68px, 7vw, 88px); scroll-margin-top: 48px; }
 .feature-zoom .guide-grid { align-items: center; gap: clamp(24px, 5vw, 66px); }
-.feature-edit .lead { max-width: 750px; }
+.feature-edit .lead, .claude-cursor .lead { max-width: 750px; }
+.hero-feature-links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.claude-cursor-steps { max-width: 720px; margin: 24px 0 0; color: #dfe5ea; }
+.claude-store-link { margin-top: 22px; white-space: normal; text-align: center; max-width: 100%; }
+:lang(ja) .claude-cursor .h-sec { font-size: clamp(30px, 5vw, 64px); }
 .feature-details { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-top: 30px; }
 .feature-card {
   min-width: 0;
