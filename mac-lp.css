@@ -266,6 +266,10 @@ footer a:hover { color: var(--ink); }
 .claude-store-link { margin-top: 22px; white-space: normal; text-align: center; max-width: 100%; }
 :lang(ja) .claude-cursor .h-sec { font-size: clamp(30px, 5vw, 64px); }
 .feature-details { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-top: 30px; }
+.zoom-gallery figure { min-width: 0; margin: 0; }
+.zoom-gallery figcaption { display: flex; align-items: baseline; gap: 12px; margin-bottom: 9px; font-weight: 700; }
+.zoom-factor { margin-inline-start: auto; color: var(--cyan); }
+.zoom-gallery img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 14px; }
 .feature-card {
   min-width: 0;
   padding: clamp(18px, 3vw, 30px);
