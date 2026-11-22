@@ -256,11 +256,13 @@ footer a:hover { color: var(--ink); }
 .hero-feature-links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
 .claude-intro { display: grid; align-items: center; gap: 24px 36px; }
 .claude-tile { width: min(100%, 260px); height: auto; border-radius: 14px; }
-.claude-preview { display: grid; gap: 8px; margin-top: 18px; color: var(--cyan); font-size: 14px; text-underline-offset: 3px; }
-.claude-preview img { width: 100%; height: auto; border-radius: 12px; }
-.claude-preview:focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
+:is(.claude-preview, .edit-preview) { display: grid; gap: 8px; margin-top: 18px; color: var(--cyan); font-size: 14px; text-underline-offset: 3px; }
+:is(.claude-preview, .edit-preview) img { width: 100%; height: auto; border-radius: 12px; }
+:is(.claude-preview, .edit-preview):focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
 .claude-usage { align-items: center; }
 .claude-usage h3 { font-size: clamp(20px, 2.5vw, 28px); line-height: 1.25; }
+.edit-preview { max-width: 840px; margin: 30px auto 0; text-align: center; }
+.edit-preview img { border: 1px solid var(--line); }
 .claude-usage .claude-preview { margin-top: 0; }
 .claude-cursor-steps { max-width: 720px; margin: 12px 0 0; color: #dfe5ea; }
 .claude-store-link { margin-top: 22px; white-space: normal; text-align: center; max-width: 100%; }
